@@ -184,11 +184,18 @@ export default function page() {
 
           {/* Right Video/Image Card */}
           <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg">
-            <img
+                <Image
+                  src={"/images/abstract/05.jpg"}
+                  alt={""}
+                  width={744}
+                  height={444}
+                  className="object-cover"
+                />
+            {/* <img
               src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1000&auto=format&fit=crop"
               alt="Design video thumbnail"
               className="w-full h-full object-cover"
-            />
+            /> */}
 
             {/* Play Button Overlay */}
             <div className="absolute inset-0 bg-black/30 flex items-center justify-center transition duration-300 hover:bg-black/40">
