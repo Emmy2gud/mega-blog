@@ -303,7 +303,7 @@ export default function page() {
           </div>
 
           {/* Right: Contact Info */}
-          <div className="bg-gradient-to-br from-orange-500 to-orange-600 text-white rounded-2xl shadow-lg p-10 flex flex-col justify-center">
+          <div className="bg-gradient-to-br from-orange-500 to-orange-600 text-white rounded-2xl shadow-lg p-10 flex flex-col justify-center hidden lg:block ">
             <h1 className="text-3xl font-bold mb-6 border-b border-white/30 pb-2">
               Contact Us
             </h1>

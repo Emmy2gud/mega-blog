@@ -45,7 +45,7 @@ export default function Navbar() {
   return (
     <div >
       {/* Header */}
-      <nav className="bg-white shadow-sm pt-3">
+      <nav className="bg-white shadow-sm pt-3 border-b border-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-between h-16">
             {/* Logo and Navigation */}
