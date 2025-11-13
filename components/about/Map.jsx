@@ -12,11 +12,11 @@ const center = {
   lat: -3.745,
   lng: -38.523,
 }
-
+const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY
 function Map() {
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: 'AIzaSyDKLprmeRUCSYKG6NGr3Wj-bWfn7l-ZT5Q',
+    googleMapsApiKey: API_KEY || '',
   })
 
   const [map, setMap] = React.useState(null)
