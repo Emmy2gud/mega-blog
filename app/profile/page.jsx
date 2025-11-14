@@ -188,7 +188,7 @@ export default function page() {
   ];
   return (
     <div>
-      <Loader/>
+      {/* <Loader/> */}
       <header className="">
         {/* Category Tags */}
         <div className="bg-white  py-4 px-4 sm:px-6 lg:px-8">

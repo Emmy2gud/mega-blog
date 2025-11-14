@@ -37,8 +37,8 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
-import React, { useState } from "react";
-import ReactQuill from "react-quill-new";
+import React, { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 import "react-quill-new/dist/quill.snow.css";
 import {
   Dialog,
@@ -71,6 +71,9 @@ import {
 } from "@/components/ui/carousel";
 import ProfilePostCard from "./ProfilePostCard";
 import Link from "next/link";
+
+// Dynamically import ReactQuill to avoid SSR issues
+const ReactQuill = dynamic(() => import("react-quill-new"), { ssr: false });
 
 const users = [
   {
@@ -214,20 +217,20 @@ const newposts = [
 const ProfileHeader = () => {
   const [images, setImages] = useState(Array(8).fill(null));
   const [value, setValue] = useState("");
-  const toolbarOptions = [
-    ["bold", "italic", "underline"],
-
-    [{ color: [] }, { background: [] }],
-
-    [{ align: [] }],
-
-    ["link", "image"],
-
-    ["clean"],
-  ];
-  const modules = {
-    toolbar: toolbarOptions,
-  };
+  const [quillModules, setQuillModules] = useState(null);
+  
+  useEffect(() => {
+    // Only set up Quill modules on the client side
+    setQuillModules({
+      toolbar: [
+        ["bold", "italic", "underline"],
+        [{ color: [] }, { background: [] }],
+        [{ align: [] }],
+        ["link", "image"],
+        ["clean"],
+      ],
+    });
+  }, []);
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -455,7 +458,7 @@ const ProfileHeader = () => {
         <TabsContent value="sentpost">
           <Tabs defaultValue="sendvideo" className="w-full">
             <TabsList className="flex justify-center mt-3 flex-wrap gap-1">
-                      <TabsTrigger
+              <TabsTrigger
                 value="sendvideo"
                 className={
                   "data-[state=active]:!border-0 rounded-lg data-[state=active]:!bg-gray-100  data-[state=active]:after:content-[''] !font-medium !text-lg   data-[state=active]:after:absolute data-[state=active]:after:w-1  data-[state=active]:after:h-1 data-[state=active]:after:bg-orange-500    data-[state=active]:after:rounded-full data-[state=active]:after:right-24     data-[state=active]:before:mr-2 data-[state=active]:after:top-1/2 data-[state=active]:after:-translate-y-1/2  relative "
@@ -495,13 +498,15 @@ const ProfileHeader = () => {
                       <div className="col-span-1 sm:col-span-2">
                         <label htmlFor="" className="flex flex-col p-4">
                           Explanation
-                          <ReactQuill
-                            theme="snow"
-                            value={value}
-                            modules={modules}
-                            onChange={setValue}
-                            className="custom-quill mt-2"
-                          />
+                          {quillModules && (
+                            <ReactQuill
+                              theme="snow"
+                              value={value}
+                              modules={quillModules}
+                              onChange={setValue}
+                              className="custom-quill mt-2"
+                            />
+                          )}
                         </label>
                       </div>
                     </div>
@@ -568,13 +573,15 @@ const ProfileHeader = () => {
                       <div className="col-span-1 sm:col-span-2">
                         <label htmlFor="" className="flex flex-col p-4">
                           Explanation
-                          <ReactQuill
-                            theme="snow"
-                            value={value}
-                            modules={modules}
-                            onChange={setValue}
-                            className="custom-quill mt-2"
-                          />
+                          {quillModules && (
+                            <ReactQuill
+                              theme="snow"
+                              value={value}
+                              modules={quillModules}
+                              onChange={setValue}
+                              className="custom-quill mt-2"
+                            />
+                          )}
                         </label>
 
                         <label className="flex flex-col p-4 w-full">
