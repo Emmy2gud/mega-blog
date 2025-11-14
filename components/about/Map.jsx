@@ -3,7 +3,7 @@ import { GoogleMap, useJsApiLoader } from '@react-google-maps/api'
 
 const containerStyle = {
   width: '1000px',
-  height: '400px',
+  height: '450px',
   radius: '55px',
   
 }
@@ -12,6 +12,7 @@ const center = {
   lat: -3.745,
   lng: -38.523,
 }
+console.log(process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY)
 const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY
 function Map() {
   const { isLoaded } = useJsApiLoader({

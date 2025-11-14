@@ -49,6 +49,7 @@ import {
   Share,
 } from "lucide-react";
 import PostCard from "@/components/PostCard";
+import CommentSection from "@/components/CommentSection";
 
 export default function page() {
   const users = [
@@ -92,7 +93,7 @@ export default function page() {
   const topposts = [
     {
       id: 1,
-      title: "How to Spend the Perfect Day on Croatia’s Most Magical Island",
+      title: "How to Spend the Perfect Day on Croatia's Most Magical Island",
       image: "/images/car/03.jpg",
       subtitle: "Subhead",
 
@@ -100,28 +101,28 @@ export default function page() {
     },
     {
       id: 2,
-      title: "How to Spend the Perfect Day on Croatia’s Most Magical Island",
+      title: "How to Spend the Perfect Day on Croatia's Most Magical Island",
       image: "/images/animal/04.jpg",
       subtitle: "Subhead",
       date: "2022-12-06",
     },
     {
       id: 3,
-      title: "How to Spend the Perfect Day on Croatia’s Most Magical Island",
+      title: "How to Spend the Perfect Day on Croatia's Most Magical Island",
       image: "/images/dance/06.jpg",
       subtitle: "Subhead",
       date: "2022-12-06",
     },
     {
       id: 4,
-      title: "How to Spend the Perfect Day on Croatia’s Most Magical Island",
+      title: "How to Spend the Perfect Day on Croatia's Most Magical Island",
       image: "/images/food/04.jpg",
       subtitle: "Subhead",
       date: "2022-12-06",
     },
     {
       id: 5,
-      title: "How to Spend the Perfect Day on Croatia’s Most Magical Island",
+      title: "How to Spend the Perfect Day on Croatia's Most Magical Island",
       image: "/images/sport/05.jpg",
       subtitle: "Subhead",
       date: "2022-12-06",
@@ -157,7 +158,7 @@ export default function page() {
       id: 2,
       title: "How to choose the right laptop for programming",
       content:
-        "Choosing the right laptop for programming can be a tough process. It’s easy to get confused...",
+        "Choosing the right laptop for programming can be a tough process. It's easy to get confused...",
       user: users[1].name,
       image: "/images/technology/07.jpg",
       user_profile: users[1].image_url,
@@ -167,7 +168,7 @@ export default function page() {
       id: 3,
       title: "How we built the first real self-driving car",
       content:
-        "Electric self-driving cars will save millions of lives and significantly accelerate the world’s...",
+        "Electric self-driving cars will save millions of lives and significantly accelerate the world's...",
       user: users[2].name,
       image: "/images/car/02.jpg",
       user_profile: users[2].image_url,
@@ -177,7 +178,7 @@ export default function page() {
       id: 4,
       title: "How to Persuade Your Parents to Buy Fast Food",
       content:
-        "Parents often don’t want to buy fast food. They may be worried that it’s too expensive, unhealthy...",
+        "Parents often don't want to buy fast food. They may be worried that it's too expensive, unhealthy...",
       user: users[3].name,
       image: "/images/food/07.jpg",
       user_profile: users[3].image_url,
@@ -188,7 +189,7 @@ export default function page() {
     <div>
       <header className=" ">
         {/* Category Tags */}
-        <div className="bg-white border-b border-gray-200 py-4 px-14">
+        <div className="bg-white border-b border-gray-200 py-4 px-4 sm:px-6 lg:px-8">
           <Breadcrumb>
             <BreadcrumbList>
               <BreadcrumbItem>
@@ -212,12 +213,12 @@ export default function page() {
         </div>
       </header>
 
-      <main className=" py-10 px-5">
+      <main className="py-6 sm:py-8 px-4 sm:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-          <Card className={" lg:col-span-3 shadow-none border-0"}>
+          <Card className={"lg:col-span-3 shadow-none border-0"}>
             <CardHeader>
-              <CardTitle className={"text-3xl"}>
-                How to Spend the Perfect Day on Croatia’s Most Magical Island
+              <CardTitle className={"text-2xl sm:text-3xl md:text-4xl"}>
+                How to Spend the Perfect Day on Croatia's Most Magical Island
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -228,29 +229,29 @@ export default function page() {
                     alt={""}
                     width={1072}
                     height={598}
-                    className="w-full h-full rounded-lg object-cover "
+                    className="w-full h-auto rounded-lg object-cover"
                   />
                 </div>
-                <div className="flex items-center justify-center gap-30 py-2">
-                  <span className="flex ">
-                    <Calendar className="w-6 h-6 pr-2" />
+                <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 py-4">
+                  <span className="flex items-center text-sm sm:text-base">
+                    <Calendar className="w-5 h-5 sm:w-6 sm:h-6 pr-1 sm:pr-2" />
                     July 14 , 2022
                   </span>
-                  <span className="flex ">
+                  <span className="flex items-center text-sm sm:text-base">
                     {" "}
-                    <MessageCircleMore className="w-6 h-6 pr-2" />
+                    <MessageCircleMore className="w-5 h-5 sm:w-6 sm:h-6 pr-1 sm:pr-2" />
                     comments : 35
                   </span>
-                  <span className="flex ">
-                    <Folder className="w-6 h-6 pr-2" />
+                  <span className="flex items-center text-sm sm:text-base">
+                    <Folder className="w-5 h-5 sm:w-6 sm:h-6 pr-1 sm:pr-2" />
                     Category : sport
                   </span>
                 </div>
                 <div className="mt-5">
-                  <p className="font-extrabold text-lg">
-                    Don’t wait. The purpose of our lives is to be happy!
+                  <p className="font-extrabold text-lg sm:text-xl">
+                    Don't wait. The purpose of our lives is to be happy!
                   </p>
-                  <p className="mt-5 text-sm leading-6">
+                  <p className="mt-4 sm:mt-5 text-sm sm:text-base leading-6">
                     Upon arrival, your senses will be rewarded with the pleasant
                     scent of lemongrass oil used to clean the natural wood found
                     throughout the room, creating a relaxing atmosphere within
@@ -267,24 +268,24 @@ export default function page() {
                 </div>
               </div>
               <div>
-                <div className="w-[872px] h-[486px] overflow-hidden rounded-lg flex-shrink-0 px-30 py-10 mt-6">
+                <div className="w-full h-auto overflow-hidden rounded-lg flex-shrink-0 px-4 sm:px-10 py-6 sm:py-10 mt-6">
                   <Image
                     src={"/images/sport/01.jpg"}
                     alt={""}
                     width={872}
                     height={486}
-                    className="rounded-lg object-cover flex-shrink-0 "
+                    className="rounded-lg object-cover w-full h-auto"
                   />
                 </div>
 
                 <div className="mt-5">
-                  <p className="font-extrabold text-lg">
+                  <p className="font-extrabold text-lg sm:text-xl">
                     Not how long, but how well you have lived is the main thing!
                   </p>
-                  <p className="mt-5 text-sm leading-6">
+                  <p className="mt-4 sm:mt-5 text-sm sm:text-base leading-6">
                     When you are ready to indulge your sense of excitement,
                     check out the range of water- sports opportunities at the
-                    resort’s on-site water-sports center. Want to leave your
+                    resort's on-site water-sports center. Want to leave your
                     stress on the water? The resort has kayaks, paddleboards, or
                     the low-key pedal boats. Snorkeling equipment is available
                     as well, so you can experience the ever-changing undersea
@@ -306,264 +307,33 @@ export default function page() {
                     experience. For example, the Fife and Drum retains the
                     colonial feel of the area in all its guest rooms. Special
                     features include antique furnishings, elegant four poster
-                    beds in some guest rooms, as well folk art and artifacts
+                    beds in some guest rooms, as well as folk art and artifacts
                     from the restoration period of the historic area available
                     for guests to enjoy.
                   </p>
                 </div>
               </div>
             </CardContent>
-            <CardFooter className={"block"}>
-              <div className="mt-4">
-                {/* Section title */}
-                <div className="flex items-center mb-3">
-                  <div className="w-1 h-5 bg-orange-600 mr-2 rounded"></div>
-                  <p className="font-semibold text-gray-800">Comments</p>
-                </div>
-
-                {/* Main Comment */}
-                <div className=" rounded-2xl ">
-                  <div className="bg-gray-50 p-4 rounded-t-2xl h-60 relative rounded-b-2xl">
-                    <div className="flex items-start mb-3 justify-between">
-                      <div className="flex">
-                        <Image
-                          src="/images/avatar/08.jpg"
-                          alt="Jon Kantner"
-                          width={50}
-                          height={50}
-                          className="rounded-lg object-cover"
-                        />
-                        <div className="ml-3">
-                          <h2 className="font-semibold text-gray-800">
-                            Jon Kantner
-                          </h2>
-                          <p className="text-xs text-gray-500">2022 04 July</p>
-                        </div>
-                      </div>
-
-                      {/* Reply button */}
-                      <div className="flex justify-end mt-2 ">
-                        <Button className="text-xs bg-gray-200 hover:bg-orange-600 text-gray-500 hover:text-white">
-                          <Reply /> Reply
-                        </Button>
-                      </div>
-                    </div>
-
-                    <p className="text-gray-700 text-sm leading-relaxed">
-                      When you are ready to indulge your sense of excitement,
-                      check out the range of water-sports opportunities at the
-                      resort’s on-site water-sports center. Want to leave your
-                      stress on the water? The resort has kayaks, paddleboards,
-                      or the low-key pedal boats.
-                    </p>
-                  </div>
-
-                  {/* Replies */}
-
-                  <div className="">
-                    <div className="mt-4 ml-10 space-y-3 bg-white/70 rounded-2xl  shadow-sm relative left-6 bottom-20 w-[772px] h-[340px] p-4">
-                      {/* Reply 1 */}
-                      <div className="p-3">
-                        <div className="flex items-start mb-2">
-                          <Image
-                            src="/images/avatar/09.jpg"
-                            alt="Cassie Evans"
-                            width={40}
-                            height={40}
-                            className="rounded-lg object-cover"
-                          />
-                          <div className="ml-3">
-                            <h3 className="font-semibold text-gray-800 text-sm">
-                              Cassie Evans
-                            </h3>
-                            <p className="text-xs text-gray-500">
-                              2022 04 July
-                            </p>
-                          </div>
-                        </div>
-                        <p className="text-sm text-gray-700 leading-relaxed">
-                          a river or a lake island may be called an eyot or ait,
-                          and a small island off the coast may be called a holm.
-                          Sedimentary islands in the Ganges delta are called
-                          chars. A grouping of geographically or geologically
-                          related islands, such as the Philippines, is referred
-                          to as an archipelago.
-                        </p>
-                      </div>
-
-                      {/* Reply 2 */}
-                      <div className="p-3">
-                        <div className="flex items-start mb-2">
-                          <Image
-                            src="/images/avatar/10.jpg"
-                            alt="Behzad Pashaei"
-                            width={40}
-                            height={40}
-                            className="rounded-lg object-cover"
-                          />
-                          <div className="ml-3">
-                            <h3 className="font-semibold text-gray-800 text-sm">
-                              Behzad Pashaei
-                            </h3>
-                            <p className="text-xs text-gray-500">
-                              2022 04 July
-                            </p>
-                          </div>
-                        </div>
-                        <p className="text-sm text-gray-700 leading-relaxed">
-                          Oceanic islands are often considered to be islands
-                          that do not sit on continental shelves. Other
-                          definitions limit the term to only refer to islands
-                          with no past geological connections to a continental
-                          landmass.The vast majority are volcanic in origin,
-                          such as Saint Helena in the South Atlantic Ocean.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="mt-4">
-                {/* Section title */}
-                <div className="flex items-center mb-4">
-                  <div className="w-1 h-5 bg-orange-600 mr-2 rounded"></div>
-                  <p className="font-semibold text-gray-800">Add a comment</p>
-                </div>
-
-                {/* Comment Form */}
-                <div className=" rounded-2xl ">
-                  <form action="">
-                    <div className="grid grid-cols-2 gap-8">
-                      <div className="flex flex-col justify-between h-[252px]">
-                        <label htmlFor="">
-                          Name
-                          <input
-                            type="text"
-                            className="w-full mt-1 p-2 border-0 bg-gray-100  rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
-                            placeholder="Your Name"
-                          />
-                        </label>
-                        <label htmlFor="">
-                          Website
-                          <input
-                            type="text"
-                            className="w-full mt-1 p-2 border-0 bg-gray-100  rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
-                            placeholder="Your Website"
-                          />
-                        </label>
-                        <label htmlFor="">
-                          Email
-                          <input
-                            type="email"
-                            className="w-full mt-1 p-2 border-0 bg-gray-100  rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
-                            placeholder="Your Email"
-                          />
-                        </label>
-                      </div>
-                      <div className="">
-                        <label htmlFor="">
-                          Comment
-                          <textarea
-                            type="text"
-                            className="w-full mt-1 p-2 h-[239px] border-0 bg-gray-100  rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
-                            placeholder="Your Name"
-                          />
-                        </label>
-                      </div>
-
-                      <div className="col-span-2 mt-6 flex items-center justify-between bg-gray-50 p-2 rounded-xl shadow-sm">
-                        {/* Left Text */}
-                        <p className="text-gray-700 font-semibold text-lg">
-                          Rate the usefulness of the article
-                        </p>
-
-                        {/* Right Section */}
-                        <div className="flex items-center gap-3">
-                          {/* Reaction icons (radio-like behavior) */}
-                          <div className="flex items-center space-x-2">
-                            {reactions.map((r) => (
-                              <button
-                                key={r.id}
-                                type="button" // prevents form reload
-                                onClick={() => handleSelect(r.id)}
-                                className={`p-2 rounded-full border transition ${
-                                  selected === r.id
-                                    ? `bg-orange-100 border-orange-400 ${r.color}`
-                                    : "border-gray-300 text-gray-400 hover:text-orange-500 hover:border-orange-300"
-                                }`}
-                              >
-                                {r.icon}
-                              </button>
-                            ))}
-                          </div>
-
-                          {/* ✅ Hidden input for form submission */}
-                          {selected && (
-                            <input
-                              type="hidden"
-                              name="usefulness_rating"
-                              value={
-                                reactions.find((r) => r.id === selected)?.label
-                              }
-                            />
-                          )}
-
-                          {/* ✅ Active green button with emoji inside */}
-                          <button
-                            type="button"
-                            disabled={!selected}
-                            className={`flex items-center gap-2 px-4 py-2 rounded-full font-medium transition ${
-                              selected
-                                ? "bg-green-500 text-white hover:bg-green-600"
-                                : "bg-gray-200 text-gray-400 cursor-not-allowed"
-                            }`}
-                          >
-                            {selected && (
-                              <>
-                                {reactions.find((r) => r.id === selected)?.icon}
-                                {
-                                  reactions.find((r) => r.id === selected)
-                                    ?.label
-                                }
-                              </>
-                            )}
-                            {!selected && "Select Reaction"}
-                          </button>
-
-                          {/* 💬 Send Comment button */}
-                          <button
-                            type="submit"
-                            className="bg-rose-500 hover:bg-rose-600 text-white px-5 py-3 rounded-lg font-medium transition"
-                          >
-                            💬 Send Comment
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
-           
-            </CardFooter>
+          <CommentSection/>
           </Card>
 
           <div className={"lg:col-span-1 "}>
-            <div className=" gap-2 px-2 w-78 rounded-lg flex items-center justify-between py-2 mt-0">
-              <Button className="  py-1 text-sm w-23 bg-gray-100">
+            <div className=" gap-2 px-2 w-full rounded-lg flex flex-wrap items-center justify-center sm:justify-between py-2 mt-0">
+              <Button className="py-1 text-sm w-full sm:w-auto mb-2 sm:mb-0 sm:mr-2 bg-gray-100">
                 <span>
-                  <Send className="w-6 h-6 pl-1 text-black " />
+                  <Send className="w-5 h-5 sm:w-6 sm:h-6 pl-1 text-black " />
                 </span>
                 <p className="pr-2 text-black">Share</p>
               </Button>
-              <Button className="  py-1 text-sm w-23 bg-gray-100">
+              <Button className="py-1 text-sm w-full sm:w-auto mb-2 sm:mb-0 sm:mr-2 bg-gray-100">
                 <span>
-                  <Bookmark className="w-6 h-6  text-black pl-1" />
+                  <Bookmark className="w-5 h-5 sm:w-6 sm:h-6  text-black pl-1" />
                 </span>
                 <p className="pr-2 text-black">Marking</p>
               </Button>
-              <Button className="  py-1 text-sm w-23 bg-gray-100">
+              <Button className="py-1 text-sm w-full sm:w-auto bg-gray-100">
                 <span>
-                  <MessageCircleMore className="w-6 h-6 pl-1 text-black" />
+                  <MessageCircleMore className="w-5 h-5 sm:w-6 sm:h-6 pl-1 text-black" />
                 </span>
                 <p className="pr-2 text-black">Comment</p>
               </Button>
@@ -572,20 +342,20 @@ export default function page() {
               <Image
                 src="/images/avatar/01.jpg"
                 alt="Louis Hoebregts"
-                width={80}
-                height={80}
-                className="rounded-lg object-cover flex-shrink-0"
+                width={60}
+                height={60}
+                className="rounded-lg object-cover flex-shrink-0 w-15 h-15 sm:w-20 sm:h-20"
               />
 
               <div className="flex flex-col flex-grow justify-between">
                 <div className="flex items-start justify-between">
                   <div>
-                    <p className="font-semibold text-gray-800 text-base sm:text-sm">
+                    <p className="font-semibold text-gray-800 text-base sm:text-lg">
                       Louis Hoebregts
                     </p>
-                    <Button className="mt-2  py-1 text-sm w-23 bg-red-500">
+                    <Button className="mt-2 py-1 text-sm w-auto bg-red-500">
                       <span>
-                        <Plus className="w-6 h-6 pl-1" />
+                        <Plus className="w-5 h-5 sm:w-6 sm:h-6 pl-1" />
                       </span>
                       <p className="pr-2">Follow</p>
                     </Button>
@@ -604,13 +374,13 @@ export default function page() {
                 <p>Tags</p>
               </div>
 
-              <div className="flex flex-wrap gap-2 mt-2 text-xs">
-                <span>Montenegro</span>
-                <span>Visit Croatia</span>
-                <span>Luxury Travel</span>
-                <span>Travel Log</span>
-                <span>Paradise Island</span>
-                <span>Travel Info</span>
+              <div className="flex flex-wrap gap-2 mt-2 text-xs sm:text-sm">
+                <span className="bg-white px-2 py-1 rounded">Montenegro</span>
+                <span className="bg-white px-2 py-1 rounded">Visit Croatia</span>
+                <span className="bg-white px-2 py-1 rounded">Luxury Travel</span>
+                <span className="bg-white px-2 py-1 rounded">Travel Log</span>
+                <span className="bg-white px-2 py-1 rounded">Paradise Island</span>
+                <span className="bg-white px-2 py-1 rounded">Travel Info</span>
               </div>
             </div>
 
@@ -626,7 +396,7 @@ export default function page() {
                     key={post.id}
                     className="flex items-center gap-3 bg-white rounded-lg p-2 shadow-sm hover:shadow-md transition-shadow"
                   >
-                    <div className="w-[80px] h-[80px] overflow-hidden rounded-lg flex-shrink-0">
+                    <div className="w-[60px] h-[60px] sm:w-[80px] sm:h-[80px] overflow-hidden rounded-lg flex-shrink-0">
                       <Image
                         src={post.image}
                         alt={post.title}
@@ -637,10 +407,10 @@ export default function page() {
                     </div>
 
                     <div>
-                      <p className="font-bold text-xs mb-2   text-gray-800 line-clamp-2">
+                      <p className="font-bold text-xs mb-1 sm:mb-2 text-gray-800 line-clamp-2">
                         {post.title}
                       </p>
-                      <span className="text-gray-500 text-sm  ">
+                      <span className="text-gray-500 text-xs sm:text-sm">
                         {post.subtitle}
                       </span>
                     </div>
@@ -677,7 +447,7 @@ export default function page() {
                                 {popularposts.map((post) => (
                                   <CarouselItem
                                     key={post.id}
-                                    className="basis-1/3 sm:basis-1/2 md:basis-1/4 lg:basis-1/4"
+                                    className="basis-full sm:basis-1/2 md:basis-1/2 lg:basis-1/3"
                                   >
                                     <Card className="border-none shadow-none bg-transparent">
                                       <CardContent className="flex items-center justify-center p-2">

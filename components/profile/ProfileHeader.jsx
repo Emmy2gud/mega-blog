@@ -163,7 +163,7 @@ const newposts = [
     title: "What a Disabled Squirrel Taught Me About Life, Work, and Love",
     image: "/images/animal/03.jpg",
     content:
-      "Why it helps to know what it’s like, and the exquisite beauty of empathy These days, the wood patio area just outside my kitchen door is a riot ",
+      "Why it helps to know what it's like, and the exquisite beauty of empathy These days, the wood patio area just outside my kitchen door is a riot ",
     user: users[1].name,
     user_profile: users[1].image_url,
     date: "2022-12-06",
@@ -173,7 +173,7 @@ const newposts = [
     title: "How to Become a Master Designer",
     image: "/images/abstract/06.jpg",
     content:
-      "Many outsiders believe that designers are unicorns, gifted or special in some way. We have an innate ability to create gorgeous interfaces, a natural talent for matching complementary colors, an unexplainable intuition…",
+      "Many outsiders believe that designers are unicorns, gifted or special in some way. We have an innate ability to create gorgeous interfaces, a natural talent for matching complementary colors, an unexplainable intuition...",
     user: users[2].name,
     user_profile: users[2].image_url,
     date: "2022-12-06",
@@ -188,7 +188,6 @@ const newposts = [
     user_profile: users[3].image_url,
     date: "2022-12-06",
   },
-  ,
   {
     id: 5,
     title: "Becoming a Self-Driving Car & Machine Learning Engineer",
@@ -207,7 +206,7 @@ const newposts = [
     content:
       "A Berlin-based music software company, just released a free interactive music course that runs right in your browser. One thing that.",
     user: users[5].name,
-    user_profile: users[4].image_url,
+    user_profile: users[5].image_url,
     date: "2022-12-06",
   },
 ];
@@ -271,7 +270,7 @@ const ProfileHeader = () => {
       id: 2,
       title: "How to choose the right laptop for programming",
       content:
-        "Choosing the right laptop for programming can be a tough process. It’s easy to get confused...",
+        "Choosing the right laptop for programming can be a tough process. It's easy to get confused...",
       user: users[1].name,
       image: "/images/technology/07.jpg",
       user_profile: users[1].image_url,
@@ -281,7 +280,7 @@ const ProfileHeader = () => {
       id: 3,
       title: "How we built the first real self-driving car",
       content:
-        "Electric self-driving cars will save millions of lives and significantly accelerate the world’s...",
+        "Electric self-driving cars will save millions of lives and significantly accelerate the world's...",
       user: users[2].name,
       image: "/images/car/02.jpg",
       user_profile: users[2].image_url,
@@ -291,40 +290,41 @@ const ProfileHeader = () => {
       id: 4,
       title: "How to Persuade Your Parents to Buy Fast Food",
       content:
-        "Parents often don’t want to buy fast food. They may be worried that it’s too expensive, unhealthy...",
+        "Parents often don't want to buy fast food. They may be worried that it's too expensive, unhealthy...",
       user: users[3].name,
       image: "/images/food/07.jpg",
       user_profile: users[3].image_url,
       date: "2022-12-06",
     },
   ];
+  
   return (
     <Tabs defaultValue="marked" className="w-full">
       <div>
-        <div className="bg-gray-100 p-6 rounded-lg">
+        <div className="bg-gray-100 p-4 sm:p-6 rounded-lg">
           <div>
             <Image
               src="/images/abstract/05.jpg"
               alt="Profile Image"
               width={1491}
               height={150}
-              className="rounded-lg w-[1491px] h-[150px]  mb-4"
+              className="rounded-lg w-full h-[100px] sm:h-[150px] object-cover mb-4"
             />
           </div>
-          <div className="flex items-center justify-between gap-4 py-4 ">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 py-4">
             <div className="flex items-center gap-3">
               <Image
                 src="/images/avatar/01.jpg"
                 alt="Profile Image"
                 width={80}
                 height={80}
-                className="rounded-lg"
+                className="rounded-lg w-16 h-16 sm:w-20 sm:h-20 object-cover"
               />
               <h2 className="text-xl font-bold">John Doe</h2>
             </div>
 
-            <div>
-              <TabsList className="flex justify-center gap-3">
+            <div className="w-full sm:w-auto">
+              <TabsList className="flex justify-center gap-1 sm:gap-3 flex-wrap">
                 <TabsTrigger value="marked" className={"!bg-transparent"}>
                   Marked
                 </TabsTrigger>
@@ -345,11 +345,12 @@ const ProfileHeader = () => {
                       variant="outline"
                       size="sm"
                       className={
-                        "border-1 bg-transparent text-red-400 text-lg font-semibold"
+                        "border-1 bg-transparent text-red-400 text-base sm:text-lg font-semibold"
                       }
                     >
                       <UserPen className="mr-2 h-4 w-4" />
-                      Edit Profile
+                      <span className="hidden sm:inline">Edit Profile</span>
+                      <span className="sm:hidden">Edit</span>
                     </Button>
                   </DialogTrigger>
                   <DialogContent className="sm:max-w-[425px]">
@@ -357,7 +358,7 @@ const ProfileHeader = () => {
                       <DialogTitle>Edit profile</DialogTitle>
                       <DialogDescription>
                         Make changes to your profile here. Click save when
-                        you&apos;re done.
+                        you're done.
                       </DialogDescription>
                     </DialogHeader>
                     <div className="grid gap-4">
@@ -377,9 +378,9 @@ const ProfileHeader = () => {
                           defaultValue="@peduarte"
                         />
                       </div>
-                                   <div className="grid gap-3">
+                      <div className="grid gap-3">
                         <Label htmlFor="username-1">Profile Cover</Label>
-                       <Input id="file" type="file" />
+                        <Input id="file" type="file" />
                       </div>
                       <div
                         className="flex flex-col items-center justify-center 
@@ -387,7 +388,7 @@ const ProfileHeader = () => {
          rounded-lg p-6 h-[209px]"
                       >
                         <ImageIcon className="w-16 h-16 text-gray-400 mb-3" />
-                        <p className="text-sm text-gray-600">
+                        <p className="text-sm text-gray-600 text-center">
                           Drop Banner Here, Paste Or
                         </p>
 
@@ -403,7 +404,6 @@ const ProfileHeader = () => {
                           </Button>
                         </label>
                       </div>
-                      
                     </div>
                     <DialogFooter>
                       <DialogClose asChild>
@@ -421,13 +421,13 @@ const ProfileHeader = () => {
         </div>
 
         <TabsContent value="marked">
-          <div className="grid grid-cols-4 gap-2 pt-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pt-4">
             {newposts.map((post) => (
               <PostCard key={post.id} post={post} />
             ))}
           </div>
 
-          <div className="flex float-left  mt-10">
+          <div className="flex justify-center mt-8">
             <Pagination>
               <PaginationContent>
                 <PaginationItem>
@@ -454,8 +454,8 @@ const ProfileHeader = () => {
 
         <TabsContent value="sentpost">
           <Tabs defaultValue="sendvideo" className="w-full">
-            <TabsList className="flex justify-center mt-3">
-              <TabsTrigger
+            <TabsList className="flex justify-center mt-3 flex-wrap gap-1">
+                      <TabsTrigger
                 value="sendvideo"
                 className={
                   "data-[state=active]:!border-0 rounded-lg data-[state=active]:!bg-gray-100  data-[state=active]:after:content-[''] !font-medium !text-lg   data-[state=active]:after:absolute data-[state=active]:after:w-1  data-[state=active]:after:h-1 data-[state=active]:after:bg-orange-500    data-[state=active]:after:rounded-full data-[state=active]:after:right-24     data-[state=active]:before:mr-2 data-[state=active]:after:top-1/2 data-[state=active]:after:-translate-y-1/2  relative "
@@ -475,25 +475,25 @@ const ProfileHeader = () => {
 
             <TabsContent value="sendvideo">
               <form action="">
-                <div className="grid grid-cols-4 gap-4">
-                  <div className="col-span-3">
-                    <div className="grid grid-cols-2 gap-3    w-full">
+                <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
+                  <div className="lg:col-span-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full">
                       <label htmlFor="" className="flex flex-col p-4">
                         Title
                         <input
                           type="text"
-                          className="w-100 mt-1 p-2 border-0 bg-gray-100  rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                          className="w-full mt-1 p-2 border-0 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                         />
                       </label>
-                      <label htmlFor="" className="flex flex-col  p-4">
+                      <label htmlFor="" className="flex flex-col p-4">
                         Add tags
                         <input
                           type="text"
-                          className="w-100 mt-1 p-2 border-0 bg-gray-100  rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                          className="w-full mt-1 p-2 border-0 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                         />
                       </label>
-                      <div className="col-span-2">
-                        <label htmlFor="" className="flex flex-col   p-4">
+                      <div className="col-span-1 sm:col-span-2">
+                        <label htmlFor="" className="flex flex-col p-4">
                           Explanation
                           <ReactQuill
                             theme="snow"
@@ -506,10 +506,10 @@ const ProfileHeader = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="col-span-1 ">
-                    <label htmlFor="" className="flex flex-col  ">
+                  <div className="lg:col-span-1">
+                    <label htmlFor="" className="flex flex-col">
                       Add image
-                      <Empty className="border border-dashed bg-gray-100 h-[360px] ">
+                      <Empty className="border border-dashed bg-gray-100 h-[360px]">
                         <EmptyHeader>
                           <EmptyMedia variant="icon">
                             <ImageIcon className="w-30 h-30 text-gray-400" />
@@ -527,16 +527,16 @@ const ProfileHeader = () => {
                       </Empty>
                     </label>
 
-                    <div className=" flex flex-row justify-between mt-3">
-                      <Button variant="outline" size="sm">
+                    <div className="flex flex-wrap gap-2 justify-between mt-3">
+                      <Button variant="outline" size="sm" className="flex-1">
                         <Save className="mr-2 h-4 w-4" />
                         Draft
                       </Button>
-                      <Button variant="outline" size="sm">
+                      <Button variant="outline" size="sm" className="flex-1">
                         <Eye className="mr-2 h-4 w-4" />
                         Preview
                       </Button>
-                      <Button size="sm" className={"bg-red-500 text-white"}>
+                      <Button size="sm" className={"bg-red-500 text-white flex-1"}>
                         <Send className="mr-2 h-4 w-4" />
                         Public
                       </Button>
@@ -545,28 +545,28 @@ const ProfileHeader = () => {
                 </div>
               </form>
             </TabsContent>
+            
             <TabsContent value="sentpost">
-              {" "}
               <form action="">
-                <div className="grid grid-cols-4 gap-4">
-                  <div className="col-span-3">
-                    <div className="grid grid-cols-2 gap-3    w-full">
+                <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
+                  <div className="lg:col-span-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full">
                       <label htmlFor="" className="flex flex-col p-4">
                         Title
                         <input
                           type="text"
-                          className="w-100 mt-1 p-2 border-0 bg-gray-100  rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                          className="w-full mt-1 p-2 border-0 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                         />
                       </label>
-                      <label htmlFor="" className="flex flex-col  p-4">
+                      <label htmlFor="" className="flex flex-col p-4">
                         Add tags
                         <input
                           type="text"
-                          className="w-100 mt-1 p-2 border-0 bg-gray-100  rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                          className="w-full mt-1 p-2 border-0 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                         />
                       </label>
-                      <div className="col-span-2">
-                        <label htmlFor="" className="flex flex-col   p-4">
+                      <div className="col-span-1 sm:col-span-2">
+                        <label htmlFor="" className="flex flex-col p-4">
                           Explanation
                           <ReactQuill
                             theme="snow"
@@ -579,7 +579,7 @@ const ProfileHeader = () => {
 
                         <label className="flex flex-col p-4 w-full">
                           Image Gallery
-                          <div className="grid grid-cols-3 gap-3 p-3 mt-2 shadow-md rounded-lg border border-gray-200">
+                          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 p-3 mt-2 shadow-md rounded-lg border border-gray-200">
                             {/* LEFT SIDE — Dropzone */}
                             <div
                               className="flex flex-col items-center justify-center 
@@ -587,7 +587,7 @@ const ProfileHeader = () => {
          rounded-lg p-6 h-[319px]"
                             >
                               <ImageIcon className="w-16 h-16 text-gray-400 mb-3" />
-                              <p className="text-sm text-gray-600">
+                              <p className="text-sm text-gray-600 text-center">
                                 Drop Image Here, Paste Or
                               </p>
 
@@ -605,11 +605,11 @@ const ProfileHeader = () => {
                             </div>
 
                             {/* RIGHT SIDE — 8 slots */}
-                            <div className="col-span-2 grid grid-cols-4 gap-3">
+                            <div className="sm:col-span-2 grid grid-cols-2 sm:grid-cols-4 gap-3">
                               {images.map((img, index) => (
                                 <div
                                   key={index}
-                                  className="relative w-[131px] h-[131px] flex items-center justify-center
+                                  className="relative w-full aspect-square flex items-center justify-center
               border border-dashed border-gray-300 rounded-lg bg-gray-50 
               group overflow-hidden"
                                 >
@@ -620,7 +620,7 @@ const ProfileHeader = () => {
                                         alt="preview"
                                         fill
                                         className="object-cover"
-                                        sizes="131px"
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                       />
 
                                       {/* Delete overlay */}
@@ -644,10 +644,10 @@ const ProfileHeader = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="col-span-1 ">
-                    <label htmlFor="" className="flex flex-col  ">
+                  <div className="lg:col-span-1">
+                    <label htmlFor="" className="flex flex-col">
                       Add Video
-                      <Empty className="border border-dashed bg-gray-100 h-[360px] ">
+                      <Empty className="border border-dashed bg-gray-100 h-[360px]">
                         <EmptyHeader>
                           <EmptyMedia variant="icon">
                             <Film className="w-30 h-30 text-gray-400" />
@@ -665,16 +665,16 @@ const ProfileHeader = () => {
                       </Empty>
                     </label>
 
-                    <div className=" flex flex-row justify-between mt-3">
-                      <Button variant="outline" size="sm">
+                    <div className="flex flex-wrap gap-2 justify-between mt-3">
+                      <Button variant="outline" size="sm" className="flex-1">
                         <Save className="mr-2 h-4 w-4" />
                         Draft
                       </Button>
-                      <Button variant="outline" size="sm">
+                      <Button variant="outline" size="sm" className="flex-1">
                         <Eye className="mr-2 h-4 w-4" />
                         Preview
                       </Button>
-                      <Button size="sm" className={"bg-red-500 text-white"}>
+                      <Button size="sm" className={"bg-red-500 text-white flex-1"}>
                         <Send className="mr-2 h-4 w-4" />
                         Public
                       </Button>
@@ -685,22 +685,23 @@ const ProfileHeader = () => {
             </TabsContent>
           </Tabs>
         </TabsContent>
+        
         <TabsContent value="posts">
-          <div className="w-full  mt-8">
-            <div className="grid grid-cols-4 gap-4">
+          <div className="w-full mt-8">
+            <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
               {/* LEFT SIDE — Line Chart */}
-              <div className="col-span-3">
-                <h2 className="text-2xl font-bold mb-6 flex">
-                  <div className="min-w-[4px] h-[10px] mr mt-3 mr-2 bg-orange-600" />
+              <div className="lg:col-span-3">
+                <h2 className="text-xl sm:text-2xl font-bold mb-6 flex items-center">
+                  <div className="w-1 h-6 mr-2 bg-orange-600 rounded-full" />
                   View Posts
                 </h2>
 
                 <LineChartComponent />
               </div>
 
-              <div className="col-span-1">
-                <h2 className="text-2xl font-bold mb-6 flex">
-                  <div className="min-w-[4px] h-[10px] mt-3 mr-2 bg-orange-600" />
+              <div className="lg:col-span-1">
+                <h2 className="text-xl sm:text-2xl font-bold mb-6 flex items-center">
+                  <div className="w-1 h-6 mr-2 bg-orange-600 rounded-full" />
                   Satisfaction Of Posts
                 </h2>
                 <StatsGrid />
@@ -710,8 +711,8 @@ const ProfileHeader = () => {
           {/* popular posts */}
           <div className="max-w-7xl mx-auto px-4 py-8 mb-10">
             <div className="max-w-7xl mx-auto px-4 py-8 mb-10">
-              <h2 className="text-2xl font-bold  flex">
-                <div className="min-w-[4px] min-h-[10px] mr-2 bg-orange-600" />
+              <h2 className="text-xl sm:text-2xl font-bold flex items-center">
+                <div className="w-1 h-6 mr-2 bg-orange-600 rounded-full" />
                 Your Posts
               </h2>
 
@@ -733,7 +734,7 @@ const ProfileHeader = () => {
                     {popularposts.map((post) => (
                       <CarouselItem
                         key={post.id}
-                        className="basis-1/3 sm:basis-1/2 md:basis-1/4 lg:basis-1/4"
+                        className="basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4"
                       >
                         <Card className="border-none shadow-none bg-transparent">
                           <CardContent className="flex items-center justify-center p-2">

@@ -93,7 +93,7 @@ export default function page() {
   const topposts = [
     {
       id: 1,
-      title: "How to Spend the Perfect Day on Croatia’s Most Magical Island",
+      title: "How to Spend the Perfect Day on Croatia's Most Magical Island",
       image: "/images/car/03.jpg",
       subtitle: "Subhead",
 
@@ -101,28 +101,28 @@ export default function page() {
     },
     {
       id: 2,
-      title: "How to Spend the Perfect Day on Croatia’s Most Magical Island",
+      title: "How to Spend the Perfect Day on Croatia's Most Magical Island",
       image: "/images/animal/04.jpg",
       subtitle: "Subhead",
       date: "2022-12-06",
     },
     {
       id: 3,
-      title: "How to Spend the Perfect Day on Croatia’s Most Magical Island",
+      title: "How to Spend the Perfect Day on Croatia's Most Magical Island",
       image: "/images/dance/06.jpg",
       subtitle: "Subhead",
       date: "2022-12-06",
     },
     {
       id: 4,
-      title: "How to Spend the Perfect Day on Croatia’s Most Magical Island",
+      title: "How to Spend the Perfect Day on Croatia's Most Magical Island",
       image: "/images/food/04.jpg",
       subtitle: "Subhead",
       date: "2022-12-06",
     },
     {
       id: 5,
-      title: "How to Spend the Perfect Day on Croatia’s Most Magical Island",
+      title: "How to Spend the Perfect Day on Croatia's Most Magical Island",
       image: "/images/sport/05.jpg",
       subtitle: "Subhead",
       date: "2022-12-06",
@@ -143,7 +143,7 @@ export default function page() {
     setSelected(id);
   };
 
-    const popularposts = [
+  const popularposts = [
     {
       id: 1,
       title: "Opening Day of Boating Season, Seattle WA",
@@ -158,7 +158,7 @@ export default function page() {
       id: 2,
       title: "How to choose the right laptop for programming",
       content:
-        "Choosing the right laptop for programming can be a tough process. It’s easy to get confused...",
+        "Choosing the right laptop for programming can be a tough process. It's easy to get confused...",
       user: users[1].name,
       image: "/images/technology/07.jpg",
       user_profile: users[1].image_url,
@@ -168,7 +168,7 @@ export default function page() {
       id: 3,
       title: "How we built the first real self-driving car",
       content:
-        "Electric self-driving cars will save millions of lives and significantly accelerate the world’s...",
+        "Electric self-driving cars will save millions of lives and significantly accelerate the world's...",
       user: users[2].name,
       image: "/images/car/02.jpg",
       user_profile: users[2].image_url,
@@ -178,7 +178,7 @@ export default function page() {
       id: 4,
       title: "How to Persuade Your Parents to Buy Fast Food",
       content:
-        "Parents often don’t want to buy fast food. They may be worried that it’s too expensive, unhealthy...",
+        "Parents often don't want to buy fast food. They may be worried that it's too expensive, unhealthy...",
       user: users[3].name,
       image: "/images/food/07.jpg",
       user_profile: users[3].image_url,
@@ -187,9 +187,9 @@ export default function page() {
   ];
   return (
     <div>
-      <header className=" ">
+      <header className="">
         {/* Category Tags */}
-        <div className="bg-white border-b border-gray-200 py-4 px-14">
+        <div className="bg-white border-b border-gray-200 py-4 px-4 sm:px-6 lg:px-8">
           <Breadcrumb>
             <BreadcrumbList>
               <BreadcrumbItem>
@@ -209,12 +209,11 @@ export default function page() {
           </Breadcrumb>
         </div>
         
-  
       </header>
 
-      <main className=" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <div>
-            <ProfileHeader />
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div>
+          <ProfileHeader />
         </div>
       </main>
     </div>

@@ -149,7 +149,7 @@ export default function page() {
       id: 2,
       title: "How to choose the right laptop for programming",
       content:
-        "Choosing the right laptop for programming can be a tough process. It’s easy to get confused...",
+        "Choosing the right laptop for programming can be a tough process. It's easy to get confused...",
       user: users[1].name,
       image: "/images/technology/07.jpg",
       user_profile: users[1].image_url,
@@ -159,7 +159,7 @@ export default function page() {
       id: 3,
       title: "How we built the first real self-driving car",
       content:
-        "Electric self-driving cars will save millions of lives and significantly accelerate the world’s...",
+        "Electric self-driving cars will save millions of lives and significantly accelerate the world's...",
       user: users[2].name,
       image: "/images/car/02.jpg",
       user_profile: users[2].image_url,
@@ -169,7 +169,7 @@ export default function page() {
       id: 4,
       title: "How to Persuade Your Parents to Buy Fast Food",
       content:
-        "Parents often don’t want to buy fast food. They may be worried that it’s too expensive, unhealthy...",
+        "Parents often don't want to buy fast food. They may be worried that it's too expensive, unhealthy...",
       user: users[3].name,
       image: "/images/food/07.jpg",
       user_profile: users[3].image_url,
@@ -193,7 +193,7 @@ export default function page() {
       title: "What a Disabled Squirrel Taught Me About Life, Work, and Love",
       image: "/images/animal/03.jpg",
       content:
-        "Why it helps to know what it’s like, and the exquisite beauty of empathy These days, the wood patio area just outside my kitchen door is a riot ",
+        "Why it helps to know what it's like, and the exquisite beauty of empathy These days, the wood patio area just outside my kitchen door is a riot ",
       user: users[1].name,
       user_profile: users[1].image_url,
       date: "2022-12-06",
@@ -203,7 +203,7 @@ export default function page() {
       title: "How to Become a Master Designer",
       image: "/images/abstract/06.jpg",
       content:
-        "Many outsiders believe that designers are unicorns, gifted or special in some way. We have an innate ability to create gorgeous interfaces, a natural talent for matching complementary colors, an unexplainable intuition…",
+        "Many outsiders believe that designers are unicorns, gifted or special in some way. We have an innate ability to create gorgeous interfaces, a natural talent for matching complementary colors, an unexplainable intuition...",
       user: users[2].name,
       user_profile: users[2].image_url,
       date: "2022-12-06",
@@ -218,7 +218,6 @@ export default function page() {
       user_profile: users[3].image_url,
       date: "2022-12-06",
     },
-    ,
     {
       id: 5,
       title: "Becoming a Self-Driving Car & Machine Learning Engineer",
@@ -237,7 +236,7 @@ export default function page() {
       content:
         "A Berlin-based music software company, just released a free interactive music course that runs right in your browser. One thing that.",
       user: users[5].name,
-      user_profile: users[4].image_url,
+      user_profile: users[5].image_url,
       date: "2022-12-06",
     },
   ];
@@ -258,7 +257,7 @@ export default function page() {
       image: "/images/animal/03.jpg",
       title: "What a Disabled Squirrel Taught Me About Life, Work, and Love",
       content:
-        "Why it helps to know what it’s like, and the exquisite beauty of empathy These days, the wood patio area just outside my kitchen door is a riot ",
+        "Why it helps to know what it's like, and the exquisite beauty of empathy These days, the wood patio area just outside my kitchen door is a riot ",
       user: users[1].name,
       user_profile: users[3].image_url,
       date: "2022-12-06",
@@ -281,7 +280,7 @@ export default function page() {
       title: "Self-Improvement Has Become An Extreme Sport",
       image: "/images/car/05.jpg",
       content:
-        "What we’re told we must do each day to develop and be successful has gone out of control. We have endless lists of habits that we’re supposed to do",
+        "What we're told we must do each day to develop and be successful has gone out of control. We have endless lists of habits that we're supposed to do",
       user: users[1].name,
       user_profile: users[3].image_url,
       date: "2022-12-06",
@@ -315,7 +314,7 @@ export default function page() {
       title: "How to build a self-driving car in one month",
       image: "/images/car/02.jpg",
       content:
-        " How Nigeria’s Fintech Boom Is Empowering Millions and Redefining Money",
+        " How Nigeria's Fintech Boom Is Empowering Millions and Redefining Money",
       user: users[0].name,
       user_profile: users[1].image_url,
       date: "2022-12-06",
@@ -326,7 +325,7 @@ export default function page() {
       title: "Self-Improvement Has Become An Extreme Sport",
       image: "/images/car/05.jpg",
       content:
-        "What we’re told we must do each day to develop and be successful has gone out of control. We have endless lists of habits that we’re supposed to do",
+        "What we're told we must do each day to develop and be successful has gone out of control. We have endless lists of habits that we're supposed to do",
       user: users[1].name,
       user_profile: users[3].image_url,
       date: "2022-12-06",
@@ -359,7 +358,7 @@ export default function page() {
       title: "Self-Improvement Has Become An Extreme Sport",
       image: "/images/car/05.jpg",
       content:
-        "What we’re told we must do each day to develop and be successful has gone out of control. We have endless lists of habits that we’re supposed to do",
+        "What we're told we must do each day to develop and be successful has gone out of control. We have endless lists of habits that we're supposed to do",
       user: users[1].name,
       user_profile: users[3].image_url,
       date: "2022-12-06",
@@ -402,7 +401,7 @@ export default function page() {
       title: "How to choose the right laptop for programming",
       image: "/images/technology/03.jpg",
       content:
-        "Choosing the right laptop for programming can be a tough process. It’s easy to get confused while researching the various options. There are many different laptop models out there, each with a different set of trade-offs",
+        "Choosing the right laptop for programming can be a tough process. It's easy to get confused while researching the various options. There are many different laptop models out there, each with a different set of trade-offs",
       user: users[4].name,
       user_profile: users[3].image_url,
       date: "2022-12-06",
@@ -425,7 +424,7 @@ export default function page() {
                   {categories.map((category) => (
                     <CarouselItem
                       key={category.id}
-                      className="md:basis-1/2 lg:basis-1/7 "
+                      className="md:basis-1/2 lg:basis-1/7"
                     >
                       <Badge className="relative text-white cursor-pointer px-4 py-2 text-sm font-medium rounded-2 w-40 bg-transparent transition-colors flex items-center overflow-hidden">
                         <span
@@ -452,11 +451,11 @@ export default function page() {
         </div>
 
         {/* header card */}
-        <div className="min-h-96 bg-white p-10 pb-30">
+        <div className="min-h-96 bg-white p-4 sm:p-6 md:p-10 pb-20 md:pb-30">
           <div className="max-w-7xl mx-auto">
             {/* Asymmetric Grid Layout */}
             <div className="grid grid-cols-1 lg:grid-cols-8 gap-4 animate-float">
-              <div className="lg:col-span-4 flex flex-col gap-6 ">
+              <div className="lg:col-span-4 flex flex-col gap-6">
                 <div className="flex flex-col sm:flex-row lg:col-span-2 gap-4">
                   {regularPosts.map((post) => (
                     <BlogCard key={post.id} {...post} />
@@ -500,7 +499,7 @@ export default function page() {
                   {popularposts.map((post) => (
                     <CarouselItem
                       key={post.id}
-                      className="basis-1/3 sm:basis-1/2 md:basis-1/4 lg:basis-1/4"
+                      className="basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4"
                     >
                       <Card className="border-none shadow-none bg-transparent">
                         <CardContent className="flex items-center justify-center p-2">
@@ -514,34 +513,34 @@ export default function page() {
             </div>
           </div>
         </div>
-        <section className="relative min-h-[450px] w-full p-8 mb-20 md:p-20 overflow-hidden bg-gradient-to-br from-yellow-400 via-orange-400 to-white">
+        <section className="relative min-h-[450px] w-full p-6 sm:p-8 md:p-12 lg:p-20 mb-10 md:mb-20 overflow-hidden bg-gradient-to-br from-yellow-400 via-orange-400 to-white">
           <div className="absolute inset-0 -z-10">
-            <div className="absolute inset-0  opacity-90"></div>
+            <div className="absolute inset-0 opacity-90"></div>
           </div>
 
-          <div className="absolute left-4 top-10 rounded-sm">
+          <div className="absolute left-2 sm:left-4 top-6 sm:top-10 rounded-sm">
             <Image
               src="/images/banner/01.png"
               alt="Decorative element"
-              width={183}
-              height={183}
-              className="object-contain opacity-80 hover:opacity-100 transition-opacity duration-300 floating-img"
+              width={100}
+              height={100}
+              className="object-contain opacity-80 hover:opacity-100 transition-opacity duration-300 floating-img w-20 h-20 sm:w-32 sm:h-32 md:w-40 md:h-40"
             />
           </div>
-          <div className="absolute top-100 right-10 transform -translate-y-1/2 rounded-sm">
+          <div className="absolute top-32 sm:top-40 md:top-90 right-2 sm:right-4 transform -translate-y-1/2 rounded-sm">
             <Image
               src="/images/banner/02.png"
               alt="Decorative element"
-              width={183}
-              height={183}
-              className="object-contain opacity-80 hover:opacity-100 transition-opacity duration-300 floating-img"
+              width={100}
+              height={100}
+              className="object-contain opacity-80 hover:opacity-100 transition-opacity duration-300 floating-img w-20 h-20 sm:w-32 sm:h-32 md:w-40 md:h-40"
             />
           </div>
 
-          <div className="grid md:grid-cols-12 gap-8 items-center z-10 relative">
-            <div className="md:col-span-5 space-y-6 text-right ">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-center z-10 relative">
+            <div className="md:col-span-5 space-y-4 sm:space-y-6 text-right">
               <div className="">
-                <h1 className="text-5xl md:text-6xl font-black text-white leading-none font-bebas">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-white leading-none font-bebas">
                   THIS
                   <br />
                   MONTH
@@ -550,34 +549,34 @@ export default function page() {
                 </h1>
               </div>
               {/* Gradient Date */}
-              <div className="text-7xl font-bold font-oswald">
+              <div className="text-5xl sm:text-6xl md:text-7xl font-bold font-oswald">
                 <span className="gradient-text">JAN</span>
                 <span className="text-black">/25</span>
               </div>
             </div>
 
             {/* Right Content - Book Cover */}
-            <div className="md:col-span-5 flex relative justify-center">
-              <div className="flex">
+            <div className="md:col-span-5 flex relative justify-center mt-8 md:mt-0">
+              <div className="flex flex-col sm:flex-row items-center">
                 <Image
                   src="/images/banner/03.png"
                   alt="Through Fire & Stone Book Cover"
-                  width={333}
-                  height={405}
-                  className="w-64 h-80 object-cover shadow-xl hover:shadow-2xl transition-shadow duration-300 mr-10"
+                  width={200}
+                  height={240}
+                  className="w-40 h-48 sm:w-48 sm:h-56 md:w-56 md:h-64 object-cover shadow-xl hover:shadow-2xl transition-shadow duration-300 mr-0 sm:mr-6 mb-4 sm:mb-0"
                 />
                 {/* Book Info */}
-                <div className="mt-6 max-w-64">
+                <div className="mt-4 sm:mt-6 max-w-xs">
                   <div className="ml-2 rounded-sm z-20">
                     <Image
                       src="/images/banner/04.png"
                       alt="Decorative icon"
-                      width={48}
-                      height={48}
-                      className="object-contain hover:scale-110 transition-transform"
+                      width={30}
+                      height={30}
+                      className="object-contain hover:scale-110 transition-transform w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12"
                     />
                   </div>
-                  <p className="text-lg text-white mb-6 leading-relaxed p-4 rounded w-88 font-medium">
+                   <p className="text-lg text-white mb-6 leading-relaxed p-4 rounded w-88 font-medium">
                     <b>The Honest Stories Teller</b> is a Vietnamese daily news
                     fashion and lifestyle magazine covering many topics
                     including fashion, beauty, culture, living, and runway based
@@ -586,7 +585,7 @@ export default function page() {
                   {/* Glow Button */}
                   <Button
                     variant="default"
-                    className="button-glow bg-gradient-to-r from-orange-600 to-orange-500 text-white hover:from-orange-500 hover:to-orange-400 font-semibold px-6 h-10 ml-5 transition-all duration-300"
+                    className="button-glow bg-gradient-to-r from-orange-600 to-orange-500 text-white hover:from-orange-500 hover:to-orange-400 font-semibold px-4 sm:px-6 h-8 sm:h-10 ml-2 sm:ml-5 transition-all duration-300 text-sm sm:text-base"
                   >
                     Read all
                   </Button>
@@ -596,32 +595,32 @@ export default function page() {
           </div>
         </section>
         {/* new posts */}
-        <div className="max-w-7xl mx-auto px-4 py-8 mb-10  p-16 m-8">
+        <div className="max-w-7xl mx-auto px-4 py-8 mb-10">
           <h2 className="text-2xl font-bold mb-6 flex">
             <div className="min-w-[4px] min-h-[10px] mr-2 bg-orange-600" />
             New Posts
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-            {newposts.map((post) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+             {newposts.map((post) => (
               <div
                 key={post.id}
                 className="overflow-hidden flex rounded text-slate-500 shadow-md shadow-slate-20 p-2"
               >
-                <Image
+                     <Image
                   src={post.image}
                   alt="card image"
-                  width={340}
-                  height={140}
-                  className="aspect-video rounded-lg object-cover mr-3"
+                  width={250}
+                  height={250}
+                  className="aspect-video rounded-lg object-cover mr-3 w-24 h-16 sm:w-[250px] sm:h-[190px]"
                 />
 
                 <div className="">
                   <header className="mb-4">
-                    <h3 className="text-lg font-semibold text-black">
+                    <h3 className="text-lg font-semibold text-black ">
                       {post.title}
                     </h3>
                   </header>
-                  <p className="text-sm mb-5 line-clamp-3">{post.content}</p>
+                  <p className="text-sm mb-5 line-clamp-2">{post.content}</p>
 
                   <div className="bg-gray-100 h-15 rounded-2xl flex p-3">
                     <div>
@@ -649,29 +648,29 @@ export default function page() {
         </div>
 
         {/* entertainment posts */}
-        <div className="max-w-7xl mx-auto px-4 py-8   p-16  ">
+        <div className="max-w-7xl mx-auto px-4 py-8">
           <h2 className="text-2xl font-bold mb-6 flex">
             <div className="min-w-[4px] min-h-[10px] mr-2 bg-orange-600" />
             Entertainments
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid grid-flow-col grid-rows-3 gap-6  ">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
             <div className="overflow-hidden rounded relative p-2 row-span-3 group">
               <Image
                 src="/images/dance/05.jpg"
                 alt="card image"
                 width={744}
                 height={544}
-                className="rounded-lg"
+                className="rounded-lg w-full h-64 sm:h-80 object-cover"
               />
 
-              <div className="relative bottom-25 bg-gray-100/35 opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4">
-                <header className="mb-3">
-                  <h3 className="text-sm font-semibold text-black text-white">
+              <div className="absolute bottom-4 left-4 right-4 bg-gray-100/35 opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-3 sm:p-4 rounded-lg">
+                <header className="mb-2 sm:mb-3">
+                  <h3 className="text-sm sm:text-base font-semibold text-black text-white">
                     How Music Affects Your Brain Plus 11 Artists To Listen To At
                     Work
                   </h3>
                 </header>
-                <p className="text-sm mb-5 line-clamp-2 text-white">
+                <p className="text-xs sm:text-sm mb-3 sm:mb-5 line-clamp-2 text-white">
                   You've read all your free member-only stories, become a member
                   to get unlimited access. Your membership fee supports the
                   voices you want to hear more from.
@@ -681,41 +680,41 @@ export default function page() {
             {entertainment.map((post) => (
               <div
                 key={post.id}
-                className="overflow-hidden flex rounded text-slate-500 shadow-md shadow-slate-20 p-2 col-span-2 "
+                className="overflow-hidden flex rounded text-slate-500 shadow-md shadow-slate-20 p-3 sm:p-4"
               >
-                <Image
+         
+           <Image
                   src={post.image}
                   alt="card image"
-                  width={190}
-                  height={190}
-                  className="aspect-video rounded-lg object-cover mr-3"
+                  width={250}
+                  height={250}
+                  className="aspect-video rounded-lg object-cover mr-3 w-24 h-16 sm:w-[250px] sm:h-[190px]"
                 />
-
                 <div className="">
-                  <header className="mb-4">
-                    <h3 className="text-lg font-semibold text-black">
+                  <header className="mb-2 sm:mb-4">
+                    <h3 className="text-base sm:text-lg font-semibold text-black">
                       {post.title}
                     </h3>
                   </header>
-                  <p className="text-sm font-medium mb-5 line-clamp-2">
+                  <p className="text-xs sm:text-sm font-medium mb-3 sm:mb-5 line-clamp-2">
                     {post.content}
                   </p>
 
-                  <div className="bg-gray-100 h-15 rounded-2xl flex p-3">
+                  <div className="bg-gray-100 rounded-xl sm:rounded-2xl flex p-2 sm:p-3">
                     <div>
                       <Image
                         src={post.user_profile}
                         alt="card image"
-                        width={40}
-                        height={40}
-                        className="rounded-lg   "
+                        width={30}
+                        height={30}
+                        className="rounded-lg w-8 h-8 sm:w-10 sm:h-10"
                       />
                     </div>
-                    <p className="text-sm pl-2">
-                      <span className="text-sm font-semibold text-black ">
+                    <p className="text-xs sm:text-sm pl-2">
+                      <span className="text-xs sm:text-sm font-semibold text-black">
                         {post.user}
                       </span>
-                      <p className=" text-slate-400 mt-1 text-sm">
+                      <p className="text-slate-400 mt-1 text-xs">
                         jun 3, 2023
                       </p>
                     </p>
@@ -727,27 +726,55 @@ export default function page() {
         </div>
 
         {/* trendy posts */}
-        <div className="max-w-7xl mx-auto px-4 py-8 mb-10 ">
+        <div className="max-w-7xl mx-auto px-4 py-8 mb-10">
           <h2 className="text-2xl font-bold mb-6 flex">
             <div className="min-w-[4px] min-h-[10px] mr-2 bg-orange-600" />
             Trendy Posts
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 ">
-            {trendyposts.map((post) => (
-              <PostCard key={post.id} post={post} />
-            ))}
+ 
+             <div className="relative w-full">
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              className="w-full"
+            >
+              {/* Controls inside Carousel but visually placed at top right */}
+              <div className="absolute top-0 right-0 z-10 flex gap-2 p-2">
+                <CarouselPrevious className="static h-8 w-8 border rounded-full" />
+                <CarouselNext className="static h-8 w-8 border rounded-full" />
+              </div>
+
+              <CarouselContent className="pt-10">
+                {" "}
+                {/* padding top so content clears the buttons */}
+                {trendyposts.map((post) => (
+                  <CarouselItem
+                    key={post.id}
+                    className="basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4"
+                  >
+                    <Card className="border-none shadow-none bg-transparent">
+                      <CardContent className="flex items-center justify-center p-2">
+                        <PostCard post={post} />
+                      </CardContent>
+                    </Card>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+            </Carousel>
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 py-8   p-16  ">
+        <div className="max-w-7xl mx-auto px-4 py-8">
           <h2 className="text-2xl font-bold mb-6 flex">
             <div className="min-w-[4px] min-h-[10px] mr-2 bg-orange-600" />
             Top Posts
           </h2>
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 sm:gap-6">
             {/* Top Posts Section - 3 columns on large screens with 2 larger cards */}
             <div className="lg:col-span-3">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                 {topposts.map((post) => (
                   <div
                     key={post.id}
@@ -759,35 +786,35 @@ export default function page() {
                         alt="card image"
                         width={600}
                         height={400}
-                        className="aspect-video w-full rounded-xl object-cover mb-6"
+                        className="aspect-video w-full rounded-xl object-cover mb-4 sm:mb-6"
                       />
                     </figure>
 
                     <div>
-                      <header className="mb-5">
-                        <h3 className="text-xl font-bold text-slate-900">
+                      <header className="mb-3 sm:mb-5">
+                        <h3 className="text-lg sm:text-xl font-bold text-slate-900">
                           {post.title}
                         </h3>
                       </header>
-                      <p className="text-base text-slate-700 mb-6 leading-relaxed">
+                      <p className="text-sm sm:text-base text-slate-700 mb-4 sm:mb-6 leading-relaxed">
                         {post.content}
                       </p>
 
-                      <div className="bg-gray-100 rounded-2xl flex items-center p-4">
+                      <div className="bg-gray-100 rounded-xl sm:rounded-2xl flex items-center p-3 sm:p-4">
                         <div className="flex-shrink-0">
                           <Image
                             src={post.user_profile}
                             alt={post.user}
-                            width={50}
-                            height={50}
-                            className="rounded-full"
+                            width={40}
+                            height={40}
+                            className="rounded-full w-10 h-10 sm:w-12 sm:h-12"
                           />
                         </div>
-                        <div className="ml-4">
-                          <p className="text-base font-semibold text-slate-900">
+                        <div className="ml-3 sm:ml-4">
+                          <p className="text-sm sm:text-base font-semibold text-slate-900">
                             {post.user}
                           </p>
-                          <p className="text-sm text-slate-500 mt-1">
+                          <p className="text-xs sm:text-sm text-slate-500 mt-1">
                             Jun 3, 2023
                           </p>
                         </div>
@@ -799,17 +826,17 @@ export default function page() {
             </div>
 
             <div className="lg:col-span-1">
-              <div className="rounded-lg   sticky top-6">
-                <h2 className="text-2xl font-bold text-slate-900 mb-6 pb-3 border-b border-slate-200">
+              <div className="rounded-lg sticky top-6">
+                <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4 sm:mb-6 pb-2 sm:pb-3 border-b border-slate-200">
                   Categories
                 </h2>
-                <div className="space-y-4">
+                <div className="space-y-3 sm:space-y-4">
                   {categories.map((category) => (
                     <div
                       key={category.id}
                       className="transform transition-transform hover:scale-105"
                     >
-                      <Badge className="relative text-white cursor-pointer px-5 py-4 text-base font-medium rounded-xl w-full bg-transparent transition-colors flex items-center overflow-hidden shadow-lg">
+                      <Badge className="relative text-white cursor-pointer px-3 sm:px-5 py-3 sm:py-4 text-sm sm:text-base font-medium rounded-xl w-full bg-transparent transition-colors flex items-center overflow-hidden shadow-lg">
                         <span
                           className="absolute inset-0 w-full h-full"
                           style={{
@@ -821,7 +848,7 @@ export default function page() {
                           }}
                           aria-hidden="true"
                         />
-                        <span className="relative z-10 font-bold text-base">
+                        <span className="relative z-10 font-bold text-sm sm:text-base">
                           #{category.name}
                         </span>
                       </Badge>
@@ -829,20 +856,20 @@ export default function page() {
                   ))}
                 </div>
 
-                <div className="mt-8">
-                  <h2 className="text-2xl font-bold text-slate-900 mb-6 pb-3 border-b border-slate-200">
+                <div className="mt-6 sm:mt-8">
+                  <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4 sm:mb-6 pb-2 sm:pb-3 border-b border-slate-200">
                     Recent Posts
                   </h2>
-                  <div className="space-y-6">
+                  <div className="space-y-4 sm:space-y-6">
                     {recentposts.map((post) => (
-                      <div key={post.id} className="flex gap-4">
+                      <div key={post.id} className="flex gap-3 sm:gap-4">
                         {/* Text Content */}
                         <div className="flex-1 min-w-0">
-                          <span className="inline-block text-xs bg-blue-500 text-center w-20 p-1 rounded-sm text-white mb-3">
+                          <span className="inline-block text-xs bg-blue-500 text-center w-16 sm:w-20 p-1 rounded-sm text-white mb-2 sm:mb-3">
                             {post.category}
                           </span>
 
-                          <p className="text-sm text-black mb-2 line-clamp-3 font-semibold ">
+                          <p className="text-xs sm:text-sm text-black mb-1 sm:mb-2 line-clamp-2 sm:line-clamp-3 font-semibold">
                             {post.content}
                           </p>
 
@@ -852,7 +879,7 @@ export default function page() {
                         </div>
 
                         {/* Image */}
-                        <div className="flex-shrink-0 w-24 h-24">
+                        <div className="flex-shrink-0 w-16 h-16 sm:w-24 sm:h-24">
                           <Image
                             src={post.image || "/images/sport/05.jpg"}
                             alt={post.title}
@@ -870,8 +897,8 @@ export default function page() {
           </div>
         </div>
 
-        {/* trendy posts */}
-        <div className="max-w-7xl mx-auto px-4 py-8 mb-10 ">
+        {/* technology posts */}
+        <div className="max-w-7xl mx-auto px-4 py-8 mb-10">
           <h2 className="text-2xl font-bold mb-6 flex">
             <div className="min-w-[4px] min-h-[10px] mr-2 bg-orange-600" />
             Technology
@@ -897,7 +924,7 @@ export default function page() {
                 {technology.map((post) => (
                   <CarouselItem
                     key={post.id}
-                    className="basis-1/3 sm:basis-1/2 md:basis-1/4 lg:basis-1/4"
+                    className="basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4"
                   >
                     <Card className="border-none shadow-none bg-transparent">
                       <CardContent className="flex items-center justify-center p-2">
@@ -912,7 +939,7 @@ export default function page() {
         </div>
 
         {/* trendy posts */}
-        <div className="max-w-7xl mx-auto px-4 py-8 mb-10 ">
+        <div className="max-w-7xl mx-auto px-4 py-8 mb-10">
           <h2 className="text-2xl font-bold mb-6 flex">
             <div className="min-w-[4px] min-h-[10px] mr-2 bg-orange-600" />
             Trendy Posts
@@ -937,7 +964,7 @@ export default function page() {
                 {trendyposts.map((post) => (
                   <CarouselItem
                     key={post.id}
-                    className="basis-1/3 sm:basis-1/2 md:basis-1/4 lg:basis-1/4"
+                    className="basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4"
                   >
                     <Card className="border-none shadow-none bg-transparent">
                       <CardContent className="flex items-center justify-center p-2">

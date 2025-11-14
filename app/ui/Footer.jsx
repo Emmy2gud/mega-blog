@@ -98,7 +98,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-black text-white py-15 px-6 relative overflow-hidden mt-20">
+    <footer className="bg-black text-white py-12 sm:py-15 px-4 sm:px-6 relative overflow-hidden mt-16 sm:mt-20">
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/20 to-accent/20"></div>
@@ -106,19 +106,19 @@ const Footer = () => {
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-12 lg:gap-16">
           {/* Newsletter Section */}
           <div className="lg:col-span-2 space-y-6">
             <div className="space-y-4">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-orange-500  rounded-2xl flex items-center justify-center">
+                <div className="w-10 h-10 bg-orange-500 rounded-2xl flex items-center justify-center">
                   <Mail className="w-5 h-5 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-footer-text">
+                <h3 className="text-xl sm:text-2xl font-bold text-footer-text">
                   Stay Updated
                 </h3>
               </div>
-              <p className="text-white text-lg font-normal leading-relaxed max-w-md">
+              <p className="text-white text-base sm:text-lg font-normal leading-relaxed max-w-md">
                 Don't miss a beat in the fast-evolving world of technology and
                 design. Join our thriving community of thousands of developers
                 and designers who rely on our exclusive, in-depth articles and
@@ -135,18 +135,18 @@ const Footer = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email address"
-                  className="flex-1 px-5 py-4 bg-footer-text/5 border border-footer-border rounded-2xl text-footer-text placeholder-footer-muted focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-smooth text-base"
+                  className="flex-1 px-4 sm:px-5 py-3 sm:py-4 bg-footer-text/5 border border-footer-border rounded-2xl text-footer-text placeholder-footer-muted focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-smooth text-sm sm:text-base"
                   required
                 />
                 <button
                   type="submit"
-                  className="bg-orange-500  text-white px-8 py-4 rounded-2xl font-semibold flex items-center justify-center gap-2 hover:shadow-glow transition-smooth transform hover:scale-105 group whitespace-nowrap"
+                  className="bg-orange-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-2xl font-semibold flex items-center justify-center gap-2 hover:shadow-glow transition-smooth transform hover:scale-105 group whitespace-nowrap text-sm sm:text-base"
                   onMouseEnter={() => setIsHovered(true)}
                   onMouseLeave={() => setIsHovered(false)}
                 >
                   Subscribe
                   <Send
-                    className={`w-5 h-5 transition-smooth ${
+                    className={`w-4 sm:w-5 h-4 sm:h-5 transition-smooth ${
                       isHovered ? "translate-x-1" : ""
                     }`}
                   />
@@ -156,10 +156,10 @@ const Footer = () => {
 
             {/* Social Links */}
             <div className="space-y-4">
-              <p className="text-lg text-black font-semibold">
+              <p className="text-base sm:text-lg text-black font-semibold">
                 Follow us on social media
               </p>
-              <div className="flex gap-4">
+              <div className="flex gap-3 sm:gap-4">
                 {[
                   { icon: Instagram, label: "Instagram", href: "#" },
                   { icon: Twitter, label: "Twitter", href: "#" },
@@ -170,9 +170,9 @@ const Footer = () => {
                     key={index}
                     href={social.href}
                     aria-label={social.label}
-                    className="w-12 h-12 bg-gray-500/20 hover:bg-primary/20 rounded-2xl flex items-center justify-center text-footer-muted hover:text-primary transition-smooth transform hover:scale-110 hover:-translate-y-1"
+                    className="w-10 h-10 sm:w-12 sm:h-12 bg-gray-500/20 hover:bg-primary/20 rounded-2xl flex items-center justify-center text-footer-muted hover:text-primary transition-smooth transform hover:scale-110 hover:-translate-y-1"
                   >
-                    <social.icon className="w-5 h-5" />
+                    <social.icon className="w-4 h-4 sm:w-5 sm:h-5" />
                   </a>
                 ))}
               </div>
@@ -181,7 +181,7 @@ const Footer = () => {
 
           {/* Categories Section */}
           <div className="space-y-6">
-            <h3 className="text-xl font-bold text-footer-text flex items-center gap-3">
+            <h3 className="text-lg sm:text-xl font-bold text-footer-text flex items-center gap-3">
               <div className="w-1 h-6 bg-orange-500 rounded-full"></div>
               Categories
             </h3>
@@ -190,7 +190,7 @@ const Footer = () => {
                 <a
                   key={category}
                   href="#"
-                  className="block text-footer-muted hover:text-primary transition-smooth py-1 hover:translate-x-2 transform"
+                  className="block text-footer-muted hover:text-primary transition-smooth py-1 hover:translate-x-2 transform text-sm sm:text-base"
                 >
                   {category}
                 </a>
@@ -198,35 +198,35 @@ const Footer = () => {
             </div>
 
             <div className="space-y-6">
-              <h3 className="text-xl font-bold text-footer-text flex items-center gap-3">
+              <h3 className="text-lg sm:text-xl font-bold text-footer-text flex items-center gap-3">
                 <div className="w-1 h-6 bg-orange-500 rounded-full"></div>
                 Social Network
               </h3>
-    <div className="flex space-x-3 items-center">
-      <div className="flex items-center min-h-[40px] bg-gradient-to-r from-blue-700 to-pink-600 min-w-[64px] rounded-sm p-3 space-x-2">
-        <Instagram className="w-5 h-5 text-white" />
-        <p className="text-white">Instagram</p>
-      </div>
-      <div className="flex items-center justify-center min-h-[40px] bg-blue-700 min-w-[40px] rounded-sm p-3">
-        <TwitterIcon />
-      </div>
-    </div>
+              <div className="flex space-x-3 items-center">
+                <div className="flex items-center min-h-[36px] sm:min-h-[40px] bg-gradient-to-r from-blue-700 to-pink-600 min-w-[56px] sm:min-w-[64px] rounded-sm p-2 sm:p-3 space-x-2">
+                  <Instagram className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+                  <p className="text-white text-xs sm:text-sm">Instagram</p>
+                </div>
+                <div className="flex items-center justify-center min-h-[36px] sm:min-h-[40px] bg-blue-700 min-w-[36px] sm:min-w-[40px] rounded-sm p-2 sm:p-3">
+                  <TwitterIcon className="w-4 h-4 sm:w-5 sm:h-5" />
+                </div>
+              </div>
             </div>
           </div>
 
           {/* Recent Posts Section */}
           <div className="space-y-6">
-            <h3 className="text-xl font-bold text-footer-text flex items-center gap-3">
-              <FileText className="w-5 h-5 text-orange-500" />
+            <h3 className="text-lg sm:text-xl font-bold text-footer-text flex items-center gap-3">
+              <FileText className="w-4 h-4 sm:w-5 sm:h-5 text-orange-500" />
               Recent Posts
             </h3>
-            <div className="space-y-5">
+            <div className="space-y-4 sm:space-y-5">
               {recentPosts.map((post, index) => (
                 <article key={index} className="group cursor-pointer">
-                  <h4 className="font-semibold text-footer-text group-hover:text-primary transition-smooth mb-2 leading-snug">
+                  <h4 className="font-semibold text-footer-text group-hover:text-primary transition-smooth mb-2 leading-snug text-sm sm:text-base">
                     {post.title}
                   </h4>
-                  <div className="flex items-center gap-3 text-sm text-footer-muted">
+                  <div className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm text-footer-muted">
                     <span className="flex items-center gap-1">
                       <Calendar className="w-3 h-3" />
                       {post.date}
@@ -246,11 +246,11 @@ const Footer = () => {
 
           {/* Instagram Section */}
           <div className="space-y-6">
-            <h3 className="text-xl font-bold text-footer-text flex items-center gap-3">
-              <Instagram className="w-5 h-5 text-pink-500" />
+            <h3 className="text-lg sm:text-xl font-bold text-footer-text flex items-center gap-3">
+              <Instagram className="w-4 h-4 sm:w-5 sm:h-5 text-pink-500" />
               Instagram
             </h3>
-            <div className="grid grid-cols-3 gap-3">
+            <div className="grid grid-cols-3 gap-2 sm:gap-3">
               {instagramPosts.map((post) => (
                 <div
                   key={post.id}
@@ -262,8 +262,8 @@ const Footer = () => {
                     className="w-full h-full object-cover transition-smooth group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-smooth flex items-center justify-center">
-                    <div className="flex items-center gap-1 text-white text-sm font-medium">
-                      <Heart className="w-4 h-4" />
+                    <div className="flex items-center gap-1 text-white text-xs sm:text-sm font-medium">
+                      <Heart className="w-3 h-3 sm:w-4 sm:h-4" />
                       <span>{post.likes}</span>
                     </div>
                   </div>
@@ -274,30 +274,30 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-16 pt-8 border-t border-footer-border">
+        <div className="mt-12 sm:mt-16 pt-6 sm:pt-8 border-t border-footer-border">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
             <div className="space-y-4">
-              <div className="flex items-center gap-4">
-                <h2 className="text-3xl font-bold bg-clip-text text-transparent">
-                  <span className="text-2xl font-bold text-orange-500">
+              <div className="flex items-center gap-3 sm:gap-4">
+                <h2 className="text-2xl sm:text-3xl font-bold bg-clip-text text-transparent">
+                  <span className="text-xl sm:text-2xl font-bold text-orange-500">
                     MEGA
                   </span>
-                  <span className="text-2xl font-bold text-orange-500">
+                  <span className="text-xl sm:text-2xl font-bold text-orange-500">
                     .news
                   </span>
                 </h2>
-                <div className="hidden sm:block w-px h-6 bg-orange-500 "></div>
-                <p className="text-footer-muted">
+                <div className="hidden sm:block w-px h-6 bg-orange-500"></div>
+                <p className="text-footer-muted text-sm sm:text-base">
                   Empowering creators with modern insights
                 </p>
               </div>
-              <p className="text-footer-muted text-sm">
+              <p className="text-footer-muted text-xs sm:text-sm">
                 © 2024 BlogFootprint. All rights reserved. Made with ❤️ for the
                 creative community.
               </p>
             </div>
 
-            <div className="flex flex-wrap items-center gap-8 text-sm">
+            <div className="flex flex-wrap items-center gap-4 sm:gap-8 text-xs sm:text-sm">
               <a
                 href="#"
                 className="text-footer-muted hover:text-primary transition-smooth"
@@ -327,7 +327,7 @@ const Footer = () => {
                 className="text-footer-muted hover:text-primary transition-smooth flex items-center gap-2 group"
               >
                 Back to Top
-                <ArrowRight className="w-4 h-4 rotate-[-90deg] group-hover:-translate-y-1 transition-smooth" />
+                <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 rotate-[-90deg] group-hover:-translate-y-1 transition-smooth" />
               </button>
             </div>
           </div>
