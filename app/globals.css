@@ -209,3 +209,25 @@ section::before {
 .custom-quill .ql-editor:focus {
   outline: none !important;
 }
+
+@keyframes growLoader {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.animate-grow-loader {
+ animation: growLoader 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

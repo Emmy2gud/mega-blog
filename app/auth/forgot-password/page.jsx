@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
 import { Mail } from "lucide-react";
+import Loader from "@/components/Loader";
 
 export default function ForgotPasswordPage() {
   const [email, setEmail] = useState("");
@@ -35,7 +36,10 @@ export default function ForgotPasswordPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+    <div>
+      <Loader />
+          <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+
       <div className="w-full max-w-md">
         <Card className="border-0 shadow-lg rounded-2xl overflow-hidden">
           <CardHeader className="text-center bg-gradient-to-r from-orange-500 to-orange-600 text-white p-6 sm:p-8">
@@ -111,5 +115,8 @@ export default function ForgotPasswordPage() {
         </Card>
       </div>
     </div>
+    </div>
+
+
   );
 }

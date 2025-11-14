@@ -64,6 +64,7 @@ import PostCard from "@/components/PostCard";
 export default function NotFound() {
   return (
     <div>
+        <Loader/>
       <main className="py-16 px-6 ">
         {/* errror page */}
         <div className="max-w-3xl mx-auto text-center">

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -14,6 +14,8 @@ import Image from "next/image";
 import BlogCard from "@/components/BlogCard";
 import PostCard from "@/components/PostCard";
 import Link from "next/link";
+import Loader from "@/components/Loader";
+
 
 export default function page() {
   const users = [
@@ -408,7 +410,9 @@ export default function page() {
     },
   ];
   return (
+
     <div>
+      <Loader/>
       <header className="min-h-screen bg-gray-100">
         {/* Category Tags */}
         <div className="bg-white border-b border-gray-200 pt-4">
@@ -979,5 +983,7 @@ export default function page() {
         </div>
       </main>
     </div>
+
+
   );
 }

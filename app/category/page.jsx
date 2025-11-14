@@ -70,6 +70,7 @@ import {
   Share,
 } from "lucide-react";
 import PostCard from "@/components/PostCard";
+import Loader from "@/components/Loader";
 
 export default function page() {
   const users = [
@@ -283,9 +284,10 @@ const newposts = [
   ];
   return (
     <div>
+        <Loader/>
       <header className=" ">
         {/* Category Tags */}
-        <div className="bg-white border-b border-gray-200 py-4 px-4 sm:px-6 lg:px-8">
+        <div className="bg-white  py-4 px-4 sm:px-6 lg:px-8">
           <Breadcrumb>
             <BreadcrumbList>
               <BreadcrumbItem>
@@ -309,33 +311,37 @@ const newposts = [
         <Tabs defaultValue="new" className="w-full">
 
 
-<div className="w-full bg-gray-100 rounded-lg py-2 flex flex-wrap items-center justify-between px-4">
-  {/* Tabs */}
-  <TabsList className="flex gap-2 sm:gap-3 flex-wrap">
-    <TabsTrigger
-      value="new"
-      className="!bg-transparent data-[state=active]:!border-0 data-[state=active]:!text-orange-500"
-    >
-      New
-    </TabsTrigger>
-    <TabsTrigger value="trendy" className="!bg-transparent">
-      Trendy
-    </TabsTrigger>
-    <TabsTrigger value="popular" className="!bg-transparent">
-      Popular
-    </TabsTrigger>
-    <TabsTrigger value="top" className="!bg-transparent">
-      Top
-    </TabsTrigger>
-  </TabsList>
+<div className="w-full bg-gray-100 rounded-lg py-2 px-4">
+  <div className="flex items-center justify-between gap-2">
+    {/* Carousel wrapper for tabs on small screens */}
+    <div className="flex-1 overflow-x-auto scrollbar-hide">
+      <TabsList className="flex gap-2 sm:gap-3 min-w-max">
+        <TabsTrigger
+          value="new"
+          className="!bg-transparent data-[state=active]:!border-0 data-[state=active]:!text-orange-500 whitespace-nowrap"
+        >
+          New
+        </TabsTrigger>
+        <TabsTrigger value="trendy" className="!bg-transparent whitespace-nowrap">
+          Trendy
+        </TabsTrigger>
+        <TabsTrigger value="popular" className="!bg-transparent whitespace-nowrap">
+          Popular
+        </TabsTrigger>
+        <TabsTrigger value="top" className="!bg-transparent whitespace-nowrap">
+          Top
+        </TabsTrigger>
+      </TabsList>
+    </div>
 
-  {/* Filter Icons */}
-  <div className="hidden lg:flex lg:flex-col-row gap-2 sm:gap-3 mt-2 sm:mt-0 ">
-   
-    <Logs className="w-5 h-5 text-gray-600 cursor-pointer hover:text-orange-500" />
-    <Grip className="w-5 h-5 text-gray-600 cursor-pointer hover:text-orange-500" />
+    {/* Icons - only visible on large screens */}
+    <div className="hidden lg:flex gap-2 sm:gap-3 flex-shrink-0">
+      <Logs className="w-5 h-5 text-gray-600 cursor-pointer hover:text-orange-500" />
+      <Grip className="w-5 h-5 text-gray-600 cursor-pointer hover:text-orange-500" />
+    </div>
   </div>
 </div>
+
 
 
           <TabsContent value="new">

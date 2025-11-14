@@ -8,6 +8,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Checkbox } from "@/components/ui/checkbox";
 import Link from "next/link";
 import { User, Mail, Lock, Eye, EyeOff } from "lucide-react";
+import Loader from "@/components/Loader";
 
 export default function RegisterPage() {
   const [showPassword, setShowPassword] = useState(false);
@@ -58,6 +59,8 @@ export default function RegisterPage() {
   };
 
   return (
+    <div>
+      <Loader/>
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
       <div className="w-full max-w-md">
         <Card className="border-0 shadow-lg rounded-2xl overflow-hidden">
@@ -212,5 +215,7 @@ export default function RegisterPage() {
         </Card>
       </div>
     </div>
+    </div>
+
   );
 }

@@ -66,6 +66,7 @@ import {
 import PostCard from "@/components/PostCard";
 import GoogleMap from "@/components/about/Map";
 import Map from "@/components/about/Map";
+import Loader from "@/components/Loader";
 
 export default function page() {
   const users = [
@@ -123,9 +124,10 @@ export default function page() {
 
   return (
     <div>
+      <Loader/>
       <header className=" ">
         {/* Category Tags */}
-        <div className="bg-white border-b border-gray-200 py-4 px-14">
+        <div className="bg-white py-4 px-14">
           <Breadcrumb>
             <BreadcrumbList>
               <BreadcrumbItem>

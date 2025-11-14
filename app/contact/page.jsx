@@ -51,6 +51,7 @@ import {
   Share,
 } from "lucide-react";
 import PostCard from "@/components/PostCard";
+import Loader from "@/components/Loader";
 
 export default function page() {
   const users = [
@@ -188,9 +189,10 @@ export default function page() {
   ];
   return (
     <div>
+      <Loader />
       <header className=" ">
         {/* Category Tags */}
-        <div className="bg-white border-b border-gray-200 py-4 px-4 sm:px-6 lg:px-8">
+        <div className="bg-white  py-4 px-4 sm:px-6 lg:px-8">
           <Breadcrumb>
             <BreadcrumbList>
               <BreadcrumbItem>

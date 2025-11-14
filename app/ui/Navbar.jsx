@@ -45,9 +45,9 @@ export default function Navbar() {
   }, [isUserMenuOpen])
 
   return (
-    <div className={`sticky top-0 z-50 transition-shadow duration-300 ${isScrolled ? "shadow-md" : "shadow-sm"}`}>
+    <div className={`sticky top-0 z-50 transition-shadow duration-300`}>
       {/* Header */}
-      <nav className="bg-white border-b border-gray-100">
+      <nav className="bg-white ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo and Mobile Menu Button */}
@@ -189,13 +189,7 @@ export default function Navbar() {
               >
                 Contact Us
               </Link>
-              <Link 
-                href="/blog" 
-                className="block px-3 py-2 rounded-md text-base font-medium text-black hover:text-orange-500"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Blog
-              </Link>
+           
               <Link 
                 href="/profile" 
                 className="block px-3 py-2 rounded-md text-base font-medium text-black hover:text-orange-500"

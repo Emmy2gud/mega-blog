@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import { useState } from "react";
 import React from "react";
 import { Button } from "@/components/ui/button";
@@ -50,8 +50,89 @@ import {
 } from "lucide-react";
 import PostCard from "@/components/PostCard";
 import CommentSection from "@/components/CommentSection";
+import Loader from "@/components/Loader";
+// Import framer motion
+import { motion } from "framer-motion";
 
-export default function page() {
+// Mock data for blog posts - in a real app, this would come from an API or database
+const blogPosts = [
+  {
+    id: 1,
+    slug: "how-to-spend-the-perfect-day-on-croatias-most-magical-island",
+    title: "How to Spend the Perfect Day on Croatia's Most Magical Island",
+    date: "July 14, 2022",
+    category: "Travel",
+    comments: 35,
+    image: "/images/sport/05.jpg",
+    content: [
+      {
+        type: "paragraph",
+        text: "Upon arrival, your senses will be rewarded with the pleasant scent of lemongrass oil used to clean the natural wood found throughout the room, creating a relaxing atmosphere within the space."
+      },
+      {
+        type: "paragraph",
+        text: "A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite."
+      },
+      {
+        type: "image",
+        src: "/images/sport/01.jpg",
+        alt: "Beautiful scenery"
+      },
+      {
+        type: "heading",
+        text: "Not how long, but how well you have lived is the main thing!"
+      },
+      {
+        type: "paragraph",
+        text: "When you are ready to indulge your sense of excitement, check out the range of water- sports opportunities at the resort's on-site water-sports center. Want to leave your stress on the water? The resort has kayaks, paddleboards, or the low-key pedal boats. Snorkeling equipment is available as well, so you can experience the ever-changing undersea environment."
+      },
+      {
+        type: "paragraph",
+        text: "Not only do visitors to a bed and breakfast get a unique perspective on the place they are visiting, they have options for special packages not available in other hotel settings. Bed and breakfasts can partner easily with local businesses for a smoothly organized and highly personalized vacation experience. The Fife and Drum Inn offers options such as the Historic Triangle Package that includes three nights at the Inn, breakfasts, and admissions to historic Williamsburg, Jamestown, and Yorktown. Bed and breakfasts also lend themselves to romance."
+      },
+      {
+        type: "paragraph",
+        text: "Part of the charm of a bed and breakfast is the uniqueness; art, décor, and food are integrated to create a complete experience. For example, the Fife and Drum retains the colonial feel of the area in all its guest rooms. Special features include antique furnishings, elegant four poster beds in some guest rooms, as well as folk art and artifacts from the restoration period of the historic area available for guests to enjoy."
+      }
+    ],
+    author: {
+      name: "Louis Hoebregts",
+      avatar: "/images/avatar/01.jpg",
+      posts: 27
+    },
+    tags: ["Montenegro", "Visit Croatia", "Luxury Travel", "Travel Log", "Paradise Island", "Travel Info"]
+  },
+  {
+    id: 2,
+    slug: "opening-day-of-boating-season-seattle-wa",
+    title: "Opening Day of Boating Season, Seattle WA",
+    date: "June 3, 2023",
+    category: "Lifestyle",
+    comments: 12,
+    image: "/images/sport/05.jpg",
+    content: [
+      {
+        type: "paragraph",
+        text: "Of course the Puget Sound is very watery, and where there is water, there are boats. Today is the opening day of boating season in Seattle, and the marinas are bustling with activity as boat owners prepare their vessels for the summer months."
+      },
+      {
+        type: "paragraph",
+        text: "The weather couldn't be more perfect for launching the boats. Clear skies and calm waters make for ideal conditions as families and friends gather at the docks to celebrate the beginning of another boating season."
+      }
+    ],
+    author: {
+      name: "James",
+      avatar: "/images/avatar/01.jpg",
+      posts: 15
+    },
+    tags: ["Seattle", "Boating", "Summer", "Puget Sound"]
+  }
+];
+
+export default function BlogPostPage({ params }) {
+  // Find the blog post based on the slug
+  const blogPost = blogPosts.find(post => post.slug === params.slug) || blogPosts[0];
+
   const users = [
     {
       id: 1,
@@ -96,7 +177,6 @@ export default function page() {
       title: "How to Spend the Perfect Day on Croatia's Most Magical Island",
       image: "/images/car/03.jpg",
       subtitle: "Subhead",
-
       date: "2022-12-06",
     },
     {
@@ -185,11 +265,21 @@ export default function page() {
       date: "2022-12-06",
     },
   ];
+  
+  if (!blogPost) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <p>Blog post not found</p>
+      </div>
+    );
+  }
+  
   return (
     <div>
+        <Loader/>
       <header className=" ">
         {/* Category Tags */}
-        <div className="bg-white border-b border-gray-200 py-4 px-4 sm:px-6 lg:px-8">
+        <div className="bg-white  py-4 px-4 sm:px-6 lg:px-8">
           <Breadcrumb>
             <BreadcrumbList>
               <BreadcrumbItem>
@@ -201,12 +291,12 @@ export default function page() {
 
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>
-                  <Link href="/docs/components">Featured</Link>
+                  <Link href="/blog">Blog</Link>
                 </BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator />
               <BreadcrumbItem>
-                <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
+                <BreadcrumbPage>{blogPost.title}</BreadcrumbPage>
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
@@ -214,111 +304,137 @@ export default function page() {
       </header>
 
       <main className="py-6 sm:py-8 px-4 sm:px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="grid grid-cols-1 lg:grid-cols-4 gap-6"
+        >
           <Card className={"lg:col-span-3 shadow-none border-0"}>
             <CardHeader>
-              <CardTitle className={"text-2xl sm:text-3xl md:text-4xl"}>
-                How to Spend the Perfect Day on Croatia's Most Magical Island
-              </CardTitle>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.2, duration: 0.5 }}
+              >
+                <CardTitle className={"text-2xl sm:text-3xl md:text-4xl"}>
+                  {blogPost.title}
+                </CardTitle>
+              </motion.div>
             </CardHeader>
             <CardContent>
-              <div>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.3, duration: 0.5 }}
+              >
                 <div>
-                  <Image
-                    src={"/images/sport/05.jpg"}
-                    alt={""}
-                    width={1072}
-                    height={598}
-                    className="w-full h-auto rounded-lg object-cover"
-                  />
+                  <div>
+                    <Image
+                      src={blogPost.image}
+                      alt={blogPost.title}
+                      width={1072}
+                      height={598}
+                      className="w-full h-auto rounded-lg object-cover"
+                    />
+                  </div>
+                  <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 py-4">
+                    <motion.span 
+                      className="flex items-center text-sm sm:text-base"
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.4, duration: 0.5 }}
+                    >
+                      <Calendar className="w-5 h-5 sm:w-6 sm:h-6 pr-1 sm:pr-2" />
+                      {blogPost.date}
+                    </motion.span>
+                    <motion.span 
+                      className="flex items-center text-sm sm:text-base"
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.5, duration: 0.5 }}
+                    >
+                      {" "}
+                      <MessageCircleMore className="w-5 h-5 sm:w-6 sm:h-6 pr-1 sm:pr-2" />
+                      comments : {blogPost.comments}
+                    </motion.span>
+                    <motion.span 
+                      className="flex items-center text-sm sm:text-base"
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.6, duration: 0.5 }}
+                    >
+                      <Folder className="w-5 h-5 sm:w-6 sm:h-6 pr-1 sm:pr-2" />
+                      Category : {blogPost.category}
+                    </motion.span>
+                  </div>
+                  <div className="mt-5">
+                    {blogPost.content.map((item, index) => {
+                      if (item.type === "paragraph") {
+                        return (
+                          <motion.p 
+                            key={index}
+                            className="mt-4 sm:mt-5 text-sm sm:text-base leading-6"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 0.7 + index * 0.1, duration: 0.5 }}
+                          >
+                            {item.text}
+                          </motion.p>
+                        );
+                      } else if (item.type === "heading") {
+                        return (
+                          <motion.p 
+                            key={index}
+                            className="font-extrabold text-lg sm:text-xl mt-6"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 0.7 + index * 0.1, duration: 0.5 }}
+                          >
+                            {item.text}
+                          </motion.p>
+                        );
+                      } else if (item.type === "image") {
+                        return (
+                          <motion.div 
+                            key={index}
+                            className="w-full h-auto overflow-hidden rounded-lg flex-shrink-0 px-4 sm:px-10 py-6 sm:py-10 mt-6"
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.7 + index * 0.1, duration: 0.5 }}
+                          >
+                            <Image
+                              src={item.src}
+                              alt={item.alt}
+                              width={872}
+                              height={486}
+                              className="rounded-lg object-cover w-full h-auto"
+                            />
+                          </motion.div>
+                        );
+                      }
+                      return null;
+                    })}
+                  </div>
                 </div>
-                <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 py-4">
-                  <span className="flex items-center text-sm sm:text-base">
-                    <Calendar className="w-5 h-5 sm:w-6 sm:h-6 pr-1 sm:pr-2" />
-                    July 14 , 2022
-                  </span>
-                  <span className="flex items-center text-sm sm:text-base">
-                    {" "}
-                    <MessageCircleMore className="w-5 h-5 sm:w-6 sm:h-6 pr-1 sm:pr-2" />
-                    comments : 35
-                  </span>
-                  <span className="flex items-center text-sm sm:text-base">
-                    <Folder className="w-5 h-5 sm:w-6 sm:h-6 pr-1 sm:pr-2" />
-                    Category : sport
-                  </span>
-                </div>
-                <div className="mt-5">
-                  <p className="font-extrabold text-lg sm:text-xl">
-                    Don't wait. The purpose of our lives is to be happy!
-                  </p>
-                  <p className="mt-4 sm:mt-5 text-sm sm:text-base leading-6">
-                    Upon arrival, your senses will be rewarded with the pleasant
-                    scent of lemongrass oil used to clean the natural wood found
-                    throughout the room, creating a relaxing atmosphere within
-                    the space.
-                    <br />
-                    A wonderful serenity has taken possession of my entire soul,
-                    like these sweet mornings of spring which I enjoy with my
-                    whole heart. I am alone, and feel the charm of existence in
-                    this spot, which was created for the bliss of souls like
-                    mine.
-                    <br />I am so happy, my dear friend, so absorbed in the
-                    exquisite.
-                  </p>
-                </div>
-              </div>
-              <div>
-                <div className="w-full h-auto overflow-hidden rounded-lg flex-shrink-0 px-4 sm:px-10 py-6 sm:py-10 mt-6">
-                  <Image
-                    src={"/images/sport/01.jpg"}
-                    alt={""}
-                    width={872}
-                    height={486}
-                    className="rounded-lg object-cover w-full h-auto"
-                  />
-                </div>
-
-                <div className="mt-5">
-                  <p className="font-extrabold text-lg sm:text-xl">
-                    Not how long, but how well you have lived is the main thing!
-                  </p>
-                  <p className="mt-4 sm:mt-5 text-sm sm:text-base leading-6">
-                    When you are ready to indulge your sense of excitement,
-                    check out the range of water- sports opportunities at the
-                    resort's on-site water-sports center. Want to leave your
-                    stress on the water? The resort has kayaks, paddleboards, or
-                    the low-key pedal boats. Snorkeling equipment is available
-                    as well, so you can experience the ever-changing undersea
-                    environment.
-                    <br />
-                    Not only do visitors to a bed and breakfast get a unique
-                    perspective on the place they are visiting, they have
-                    options for special packages not available in other hotel
-                    settings. Bed and breakfasts can partner easily with local
-                    businesses for a smoothly organized and highly personalized
-                    vacation experience. The Fife and Drum Inn offers options
-                    such as the Historic Triangle Package that includes three
-                    nights at the Inn, breakfasts, and admissions to historic
-                    Williamsburg, Jamestown, and Yorktown. Bed and breakfasts
-                    also lend themselves to romance.
-                    <br />
-                    Part of the charm of a bed and breakfast is the uniqueness;
-                    art, décor, and food are integrated to create a complete
-                    experience. For example, the Fife and Drum retains the
-                    colonial feel of the area in all its guest rooms. Special
-                    features include antique furnishings, elegant four poster
-                    beds in some guest rooms, as well as folk art and artifacts
-                    from the restoration period of the historic area available
-                    for guests to enjoy.
-                  </p>
-                </div>
-              </div>
+              </motion.div>
             </CardContent>
-          <CommentSection/>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.2, duration: 0.5 }}
+          >
+            <CommentSection/>
+          </motion.div>
           </Card>
 
           <div className={"lg:col-span-1 "}>
-            <div className=" gap-2 px-2 w-full rounded-lg flex flex-wrap items-center justify-center sm:justify-between py-2 mt-0">
+            <motion.div 
+              className=" gap-2 px-2 w-full rounded-lg flex flex-wrap items-center justify-center sm:justify-between py-2 mt-0"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.4, duration: 0.5 }}
+            >
               <Button className="py-1 text-sm w-full sm:w-auto mb-2 sm:mb-0 sm:mr-2 bg-gray-100">
                 <span>
                   <Send className="w-5 h-5 sm:w-6 sm:h-6 pl-1 text-black " />
@@ -337,11 +453,16 @@ export default function page() {
                 </span>
                 <p className="pr-2 text-black">Comment</p>
               </Button>
-            </div>
-            <div className="bg-gray-100 w-full max-w-sm flex items-center gap-4 p-4 rounded-lg mt-4 shadow-sm">
+            </motion.div>
+            <motion.div 
+              className="bg-gray-100 w-full max-w-sm flex items-center gap-4 p-4 rounded-lg mt-4 shadow-sm"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.5, duration: 0.5 }}
+            >
               <Image
-                src="/images/avatar/01.jpg"
-                alt="Louis Hoebregts"
+                src={blogPost.author.avatar}
+                alt={blogPost.author.name}
                 width={60}
                 height={60}
                 className="rounded-lg object-cover flex-shrink-0 w-15 h-15 sm:w-20 sm:h-20"
@@ -351,7 +472,7 @@ export default function page() {
                 <div className="flex items-start justify-between">
                   <div>
                     <p className="font-semibold text-gray-800 text-base sm:text-lg">
-                      Louis Hoebregts
+                      {blogPost.author.name}
                     </p>
                     <Button className="mt-2 py-1 text-sm w-auto bg-red-500">
                       <span>
@@ -362,39 +483,51 @@ export default function page() {
                   </div>
 
                   <p className="text-sm text-gray-500 whitespace-nowrap self-start">
-                    27 posts
+                    {blogPost.author.posts} posts
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="bg-gray-100 w-full max-w-sm mt-4 rounded-lg p-3 ">
+            <motion.div 
+              className="bg-gray-100 w-full max-w-sm mt-4 rounded-lg p-3 "
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.6, duration: 0.5 }}
+            >
               <div className="flex">
                 <div className="min-w-[4px] min-h-[10px] mr-2 bg-orange-600" />
                 <p>Tags</p>
               </div>
 
               <div className="flex flex-wrap gap-2 mt-2 text-xs sm:text-sm">
-                <span className="bg-white px-2 py-1 rounded">Montenegro</span>
-                <span className="bg-white px-2 py-1 rounded">Visit Croatia</span>
-                <span className="bg-white px-2 py-1 rounded">Luxury Travel</span>
-                <span className="bg-white px-2 py-1 rounded">Travel Log</span>
-                <span className="bg-white px-2 py-1 rounded">Paradise Island</span>
-                <span className="bg-white px-2 py-1 rounded">Travel Info</span>
+                {blogPost.tags.map((tag, index) => (
+                  <span key={index} className="bg-white px-2 py-1 rounded">
+                    {tag}
+                  </span>
+                ))}
               </div>
-            </div>
+            </motion.div>
 
-            <div className="bg-gray-100 w-full max-w-sm mt-4 rounded-lg p-3 ">
+            <motion.div 
+              className="bg-gray-100 w-full max-w-sm mt-4 rounded-lg p-3 "
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.7, duration: 0.5 }}
+            >
               <div className="flex">
                 <div className="min-w-[4px] min-h-[10px] mr-2 bg-orange-600" />
                 <p>Top post</p>
               </div>
 
               <div className="flex flex-col gap-3 mt-2 text-sm">
-                {topposts.map((post) => (
-                  <div
+                {topposts.map((post, index) => (
+                  <motion.div
                     key={post.id}
                     className="flex items-center gap-3 bg-white rounded-lg p-2 shadow-sm hover:shadow-md transition-shadow"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.8 + index * 0.1, duration: 0.5 }}
                   >
                     <div className="w-[60px] h-[60px] sm:w-[80px] sm:h-[80px] overflow-hidden rounded-lg flex-shrink-0">
                       <Image
@@ -414,54 +547,61 @@ export default function page() {
                         {post.subtitle}
                       </span>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
+              </div>
+            </motion.div>
+          </div>
+        </motion.div>
+
+        {/* popular posts */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.3, duration: 0.5 }}
+        >
+          <div className="max-w-7xl mx-auto px-4 py-8 mb-10">
+            <div className="max-w-7xl mx-auto px-4 py-8 mb-10">
+              <h2 className="text-2xl font-bold mb-6 flex">
+                <div className="min-w-[4px] min-h-[10px] mr-2 bg-orange-600" />
+                Related Posts
+              </h2>
+
+              <div className="relative w-full">
+                <Carousel
+                  opts={{
+                    align: "start",
+                    loop: true,
+                  }}
+                  className="w-full"
+                >
+                  {/* Controls inside Carousel but visually placed at top right */}
+                  <div className="absolute top-0 right-0 z-10 flex gap-2 p-2">
+                    <CarouselPrevious className="static h-8 w-8 border rounded-full" />
+                    <CarouselNext className="static h-8 w-8 border rounded-full" />
+                  </div>
+
+                  <CarouselContent className="pt-10">
+                    {popularposts.map((post) => (
+                      <CarouselItem
+                        key={post.id}
+                        className="basis-full sm:basis-1/2 md:basis-1/2 lg:basis-1/4"
+                      >
+                        <Card className="border-none shadow-none bg-transparent">
+                          <CardContent className="flex items-center justify-center p-2">
+                            <PostCard post={post} />
+                          </CardContent>
+                        </Card>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                </Carousel>
               </div>
             </div>
           </div>
-        </div>
-
-                {/* popular posts */}
-                      <div className="max-w-7xl mx-auto px-4 py-8 mb-10">
-                        <div className="max-w-7xl mx-auto px-4 py-8 mb-10">
-                          <h2 className="text-2xl font-bold mb-6 flex">
-                            <div className="min-w-[4px] min-h-[10px] mr-2 bg-orange-600" />
-                            Related Posts
-                          </h2>
-              
-                          <div className="relative w-full">
-                            <Carousel
-                              opts={{
-                                align: "start",
-                                loop: true,
-                              }}
-                              className="w-full"
-                            >
-                              {/* Controls inside Carousel but visually placed at top right */}
-                              <div className="absolute top-0 right-0 z-10 flex gap-2 p-2">
-                                <CarouselPrevious className="static h-8 w-8 border rounded-full" />
-                                <CarouselNext className="static h-8 w-8 border rounded-full" />
-                              </div>
-              
-                              <CarouselContent className="pt-10">
-                                {popularposts.map((post) => (
-                                  <CarouselItem
-                                    key={post.id}
-                                    className="basis-full sm:basis-1/2 md:basis-1/2 lg:basis-1/3"
-                                  >
-                                    <Card className="border-none shadow-none bg-transparent">
-                                      <CardContent className="flex items-center justify-center p-2">
-                                        <PostCard post={post} />
-                                      </CardContent>
-                                    </Card>
-                                  </CarouselItem>
-                                ))}
-                              </CarouselContent>
-                            </Carousel>
-                          </div>
-                        </div>
-                      </div>
+        </motion.div>
       </main>
     </div>
   );
 }
+
